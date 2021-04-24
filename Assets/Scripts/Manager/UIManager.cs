@@ -6,74 +6,83 @@ using UnityEngine.UI;
 
 public class UIManager : Singleton<UIManager>
 {
-    [Header("Íæ¼ÒµÄ×´Ì¬À¸")]
-    //PlayerµÄÑªÁ¿»¬¶¯Ìõ¡¢ÑªÁ¿Êı×ÖÎÄ±¾ºÍBuff¹ÒÔØÎïÌå
-    public Slider playerHealthSlider;
+    [Header("ç©å®¶çš„çŠ¶æ€æ ")]
+    //Playerçš„è¡€é‡æ»‘åŠ¨æ¡ã€è¡€é‡æ•°å­—æ–‡æœ¬å’ŒBuffæŒ‚è½½ç‰©ä½“
+    public Image playerHealthSlider;
     public Text playerHealthText;
     public GameObject playerBuffHolder;
     public GameObject playerActHolder;
 
-    [Header("µĞÈËµÄ×´Ì¬À¸")]
-    //Í¬ÉÏ£¬Ö»ÊÇEnemyµÄ
-    public Slider enemyHealthSlider;
+    [Header("æ•Œäººçš„çŠ¶æ€æ ")]
+    //åŒä¸Šï¼Œåªæ˜¯Enemyçš„
+    public Image enemyHealthSlider;
     public Text enemyHealthText;
     public GameObject enemyBuffHolder;
     public GameObject enemyActHolder;
 
-    [Header("BuffºÍActµÄÔ¤ÖÆÌåÁĞ±í")]
-    [Tooltip("ËùÓĞµÄBuffÔ¤ÖÆÌå")]
+    [Header("Buffå’ŒActçš„é¢„åˆ¶ä½“åˆ—è¡¨")]
+    [Tooltip("æ‰€æœ‰çš„Buffé¢„åˆ¶ä½“")]
     public GameObject[] AllBuffs;
-    [Tooltip("ËùÓĞµÄActÔ¤ÖÆÌå")]
+    [Tooltip("æ‰€æœ‰çš„Acté¢„åˆ¶ä½“")]
     public GameObject[] AllActs;
 
-    [Header("±ğµÄ")]
+    [Header("åˆ«çš„")]
     public Tooltip tooltip;
-
+    
+    private float originalSize1;
+    private float originalSize2;
+    
+    public void Start()
+    {
+        originalSize1 = playerHealthSlider.rectTransform.rect.width;
+        originalSize2 = enemyHealthSlider.rectTransform.rect.width;
+    }
+    
     public void UpdateUI()
     {
-        Debug.Log("¸üĞÂUI");
-        //¸üĞÂPlayerÏà¹ØµÄUI
-        //¸üĞÂPlayerµÄÑªÁ¿ÏÔÊ¾
+        Debug.Log("æ›´æ–°UI");
+        //æ›´æ–°Playerç›¸å…³çš„UI
+        //æ›´æ–°Playerçš„è¡€é‡æ˜¾ç¤º
         UpdatePlayerHealthUI();
-        //¸üĞÂPlayerµÄBuffÏÔÊ¾
+        //æ›´æ–°Playerçš„Buffæ˜¾ç¤º
         UpdatePlayerBuffUI();
 
-        //TODO: ¸üĞÂEnemyÏà¹ØµÄUI
+        //TODO: æ›´æ–°Enemyç›¸å…³çš„UI
         UpdateEnemyHealthUI();
         UpdateEnemyBuffUI();
         UpdateEnemyActUI();
     }
 
     /// <summary>
-    /// ¸üĞÂPlayerµÄÑªÁ¿ÏÔÊ¾
+    /// æ›´æ–°Playerçš„è¡€é‡æ˜¾ç¤º
     /// </summary>
     private void UpdatePlayerHealthUI()
     {
-        playerHealthSlider.value = (float)PlayerManager.Instance.currentHealth / (float)PlayerManager.Instance.maxHealth;
+        playerHealthSlider.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, originalSize1 * (float)PlayerManager.Instance.currentHealth / (float)PlayerManager.Instance.maxHealth);
         playerHealthText.text = PlayerManager.Instance.currentHealth + "/" + PlayerManager.Instance.maxHealth;
     }
 
     /// <summary>
-    /// ¸üĞÂPlayerµÄBuffÏÔÊ¾
+    /// æ›´æ–°Playerçš„Buffæ˜¾ç¤º
     /// </summary>
     private void UpdatePlayerBuffUI()
     {
         if (PlayerManager.Instance.buffShield > 0)
         {
-            //±éÀú²éÑ¯playerBuffHolderÏÂÊÇ·ñÒÑ¾­ÓĞShieldµÄBuff±êÖ¾
+            //éå†æŸ¥è¯¢playerBuffHolderä¸‹æ˜¯å¦å·²ç»æœ‰Shieldçš„Buffæ ‡å¿—
             Transform buffObj = FindBuffObjectFromHolder(0, "Buff_Shield");
-            if (buffObj != null)//ÈôÕÒµ½£¬Ò²¾ÍÊÇËµµ±Ç°ÒÑ¾­ÓĞÉú³É¸ÃbuffÎïÌå£¬¾Í¸ü¸ÄËüµÄÏÔÊ¾Êı×Ö
+            if (buffObj != null)//è‹¥æ‰¾åˆ°ï¼Œä¹Ÿå°±æ˜¯è¯´å½“å‰å·²ç»æœ‰ç”Ÿæˆè¯¥buffç‰©ä½“ï¼Œå°±æ›´æ”¹å®ƒçš„æ˜¾ç¤ºæ•°å­—
             {
                 buffObj.GetComponent<Buff>().numText.text = PlayerManager.Instance.buffShield.ToString();
-            }else//ÈôÃ»ÓĞÕÒµ½£¬Ò²¾ÍÊÇËµµ±Ç°Ã»ÓĞÉú³É¸ÃbuffÎïÌå£¬¾ÍÉú³ÉÒ»¸ö²¢¸³ÖµĞŞ¸ÄÏÔÊ¾Êı×Ö
+            }else//è‹¥æ²¡æœ‰æ‰¾åˆ°ï¼Œä¹Ÿå°±æ˜¯è¯´å½“å‰æ²¡æœ‰ç”Ÿæˆè¯¥buffç‰©ä½“ï¼Œå°±ç”Ÿæˆä¸€ä¸ªå¹¶èµ‹å€¼ä¿®æ”¹æ˜¾ç¤ºæ•°å­—
             {
                 Buff b = Instantiate(AllBuffs[0], playerBuffHolder.transform).GetComponent<Buff>();
                 b.numText.text = PlayerManager.Instance.buffShield.ToString();
                 b.belong = 0;
             }
-        }else//ÈôbuffÊı×ÖĞ¡ÓÚµÈÓÚ0£¬¾Í°Ñµ±Ç°ÓĞµÄbuffÎïÌåÉ¾³ıµô
+        }else//è‹¥buffæ•°å­—å°äºç­‰äº0ï¼Œå°±æŠŠå½“å‰æœ‰çš„buffç‰©ä½“åˆ é™¤æ‰
         {
-            //±éÀú²éÑ¯playerBuffHolderÏÂÊÇ·ñÒÑ¾­ÓĞShieldµÄBuff±êÖ¾
+            //éå†æŸ¥è¯¢playerBuffHolderä¸‹æ˜¯å¦å·²ç»æœ‰Shieldçš„Buffæ ‡å¿—
             Transform buffObj = FindBuffObjectFromHolder(0, "Buff_Shield");
             if (buffObj != null)
                 Destroy(buffObj.gameObject);
@@ -82,7 +91,7 @@ public class UIManager : Singleton<UIManager>
 
     private void UpdateEnemyHealthUI()
     {
-        enemyHealthSlider.value = (float)EnemyManager.Instance.currentEnemy.currentHealth / (float)EnemyManager.Instance.currentEnemy.maxHealth;
+        enemyHealthSlider.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, originalSize2 * (float)EnemyManager.Instance.currentEnemy.currentHealth / (float)EnemyManager.Instance.currentEnemy.maxHealth);
         enemyHealthText.text = EnemyManager.Instance.currentEnemy.currentHealth + "/" + EnemyManager.Instance.currentEnemy.maxHealth;
     }
 
@@ -91,20 +100,20 @@ public class UIManager : Singleton<UIManager>
         if (EnemyManager.Instance.currentEnemy.buffShield > 0)
         {
             Transform buffObj = FindBuffObjectFromHolder(1, "Buff_Shield");
-            if (buffObj != null)//ÈôÕÒµ½£¬Ò²¾ÍÊÇËµµ±Ç°ÒÑ¾­ÓĞÉú³É¸ÃbuffÎïÌå£¬¾Í¸ü¸ÄËüµÄÏÔÊ¾Êı×Ö
+            if (buffObj != null)//è‹¥æ‰¾åˆ°ï¼Œä¹Ÿå°±æ˜¯è¯´å½“å‰å·²ç»æœ‰ç”Ÿæˆè¯¥buffç‰©ä½“ï¼Œå°±æ›´æ”¹å®ƒçš„æ˜¾ç¤ºæ•°å­—
             {
                 buffObj.GetComponent<Buff>().numText.text = EnemyManager.Instance.currentEnemy.buffShield.ToString();
             }
-            else//ÈôÃ»ÓĞÕÒµ½£¬Ò²¾ÍÊÇËµµ±Ç°Ã»ÓĞÉú³É¸ÃbuffÎïÌå£¬¾ÍÉú³ÉÒ»¸ö²¢¸³ÖµĞŞ¸ÄÏÔÊ¾Êı×Ö
+            else//è‹¥æ²¡æœ‰æ‰¾åˆ°ï¼Œä¹Ÿå°±æ˜¯è¯´å½“å‰æ²¡æœ‰ç”Ÿæˆè¯¥buffç‰©ä½“ï¼Œå°±ç”Ÿæˆä¸€ä¸ªå¹¶èµ‹å€¼ä¿®æ”¹æ˜¾ç¤ºæ•°å­—
             {
                 Buff b = Instantiate(AllBuffs[0], enemyBuffHolder.transform).GetComponent<Buff>();
                 b.numText.text = EnemyManager.Instance.currentEnemy.buffShield.ToString();
                 b.belong = 1;
             }
         }
-        else//ÈôbuffÊı×ÖĞ¡ÓÚµÈÓÚ0£¬¾Í°Ñµ±Ç°ÓĞµÄbuffÎïÌåÉ¾³ıµô
+        else//è‹¥buffæ•°å­—å°äºç­‰äº0ï¼Œå°±æŠŠå½“å‰æœ‰çš„buffç‰©ä½“åˆ é™¤æ‰
         {
-            //±éÀú²éÑ¯playerBuffHolderÏÂÊÇ·ñÒÑ¾­ÓĞShieldµÄBuff±êÖ¾
+            //éå†æŸ¥è¯¢playerBuffHolderä¸‹æ˜¯å¦å·²ç»æœ‰Shieldçš„Buffæ ‡å¿—
             Transform buffObj = FindBuffObjectFromHolder(1, "Buff_Shield");
             if (buffObj != null)
                 Destroy(buffObj.gameObject);
@@ -157,10 +166,10 @@ public class UIManager : Singleton<UIManager>
     }
 
     /// <summary>
-    /// ÔÚÖ¸¶¨µÄBuffHolderÏÂÑ°ÕÒÖ¸¶¨µÄbuffÎïÌå²¢·µ»Ø£¬ÈôÃ»ÕÒµ½¾Í·µ»Ønull
+    /// åœ¨æŒ‡å®šçš„BuffHolderä¸‹å¯»æ‰¾æŒ‡å®šçš„buffç‰©ä½“å¹¶è¿”å›ï¼Œè‹¥æ²¡æ‰¾åˆ°å°±è¿”å›null
     /// </summary>
-    /// <param name="t">0´ú±í²éÕÒplayerµÄbuffHolder£¬1´ú±íenemyµÄ£¬2´ú±íplayerµÄactÁĞ±í£¬3´ú±íenemyµÄ</param>
-    /// <param name="buffName">Òª²éÕÒµÄbuffÃû×Ö£¬±ÈÈç¡°Buff_Shield¡±</param>
+    /// <param name="t">0ä»£è¡¨æŸ¥æ‰¾playerçš„buffHolderï¼Œ1ä»£è¡¨enemyçš„ï¼Œ2ä»£è¡¨playerçš„actåˆ—è¡¨ï¼Œ3ä»£è¡¨enemyçš„</param>
+    /// <param name="buffName">è¦æŸ¥æ‰¾çš„buffåå­—ï¼Œæ¯”å¦‚â€œBuff_Shieldâ€</param>
     /// <returns></returns>
     public Transform FindBuffObjectFromHolder(int t, string buffName)
     {
@@ -168,7 +177,7 @@ public class UIManager : Singleton<UIManager>
         {
             foreach (Transform item in playerBuffHolder.transform)
             {
-                if (item.name == buffName + "(Clone)")//ÒòÎªËùÓĞÊµÀı»¯µÄÔ¤ÖÆÌåºóÃæ¶¼»á¸úÒ»¸öÕâÑùµÄ±êÊ¶£¬ËùÒÔÔÚ²éÕÒÊ±Ò²Òª¼ÓÉÏ
+                if (item.name == buffName + "(Clone)")//å› ä¸ºæ‰€æœ‰å®ä¾‹åŒ–çš„é¢„åˆ¶ä½“åé¢éƒ½ä¼šè·Ÿä¸€ä¸ªè¿™æ ·çš„æ ‡è¯†ï¼Œæ‰€ä»¥åœ¨æŸ¥æ‰¾æ—¶ä¹Ÿè¦åŠ ä¸Š
                 {
                     return item;
                 }
@@ -208,7 +217,7 @@ public class UIManager : Singleton<UIManager>
             return null;
         }
 
-        Debug.LogError("ÔÚFindBuffObjectFromHolderÖĞ£¬ÊäÈëµÄµÚÒ»¸ö²ÎÊıt²»·ûºÏ¹æ·¶£¨²»ÊÇ0»ò1£©£¡");
+        Debug.LogError("åœ¨FindBuffObjectFromHolderä¸­ï¼Œè¾“å…¥çš„ç¬¬ä¸€ä¸ªå‚æ•°tä¸ç¬¦åˆè§„èŒƒï¼ˆä¸æ˜¯0æˆ–1ï¼‰ï¼");
         return null;
     }
 }
