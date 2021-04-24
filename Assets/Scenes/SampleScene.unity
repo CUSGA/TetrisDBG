@@ -278,7 +278,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 148, y: 110}
+  m_SizeDelta: {x: 112, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &352566171
 MonoBehaviour:
@@ -452,6 +452,7 @@ MonoBehaviour:
   Deck:
   - {fileID: 8989566570439505539, guid: 66948b6e721e1b540bf77b3c978cedb7, type: 3}
   - {fileID: 8989566570439505539, guid: d820fc108cf4d1d4dbf98b74660b66f7, type: 3}
+  - {fileID: 1106407909558450090, guid: 8190ccd8077e36c41ac8fd7bee8fa1d3, type: 3}
   buffShield: 0
   actAttack: 0
   actAttackTime: 0
@@ -1027,8 +1028,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 74, y: -35}
-  m_SizeDelta: {x: 108, y: 30}
+  m_AnchoredPosition: {x: 56, y: -34}
+  m_SizeDelta: {x: 72, y: 28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &852721732
 MonoBehaviour:
@@ -1052,10 +1053,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 45
+    m_FontSize: 25
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 3
+    m_MinSize: 2
     m_MaxSize: 300
     m_Alignment: 3
     m_AlignByGeometry: 0
@@ -1750,8 +1751,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 74, y: -75}
-  m_SizeDelta: {x: 108, y: 30}
+  m_AnchoredPosition: {x: 56, y: -69}
+  m_SizeDelta: {x: 72, y: 22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1486135643
 MonoBehaviour:
@@ -1775,7 +1776,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -1834,6 +1835,7 @@ MonoBehaviour:
   - {fileID: 1590690713908774822, guid: f5e5a7d583ac1f0428490dcf840f6f66, type: 3}
   - {fileID: 2966569990212042366, guid: 89316fe6d7a311c478d312546533a5f5, type: 3}
   - {fileID: 4318298124026020710, guid: 3b4186b69727ce24689eb7904aa229cc, type: 3}
+  - {fileID: 6158417751268843301, guid: a361f8e0122e84c4eb4fd0400f27c5d6, type: 3}
   spawner: {fileID: 774169251}
   effectAttack: 0
   effectShield: 0

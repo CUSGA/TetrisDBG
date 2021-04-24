@@ -8,6 +8,7 @@ public class PlayerManager : Singleton<PlayerManager>
     public int maxHealth = 100;
     public int currentHealth;
 
+    //TODO: 这个卡组应该改成List类型
     [Tooltip("当前能够召唤出来的所有Cube类型，也就是玩家的卡组")]
     public GameObject[] Deck;
 

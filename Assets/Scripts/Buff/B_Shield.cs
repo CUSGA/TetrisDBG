@@ -21,4 +21,9 @@ public class B_Shield : Buff
         }
         UIManager.Instance.UpdateUI();
     }
+
+    public override string GetInfo()
+    {
+        return "每层护盾可抵消1点受到的伤害。\n每隔 <color=red>" + triggerTime +"</color> 秒触发一次，每次减少一层护盾。";
+    }
 }

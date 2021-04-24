@@ -62,7 +62,12 @@ public abstract class Act : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public void OnPointerEnter(PointerEventData eventData)
     {
         UIManager.Instance.tooltip.gameObject.SetActive(true);
-        UIManager.Instance.tooltip.SetupTooltip(title, info);
+        UIManager.Instance.tooltip.SetupTooltip(title, GetInfo());
+    }
+
+    public virtual string GetInfo()
+    {
+        return info;
     }
 
     //当鼠标离开时，关闭提示

@@ -113,17 +113,17 @@ public class UIManager : Singleton<UIManager>
 
     private void UpdateEnemyActUI()
     {
-        if (EnemyManager.Instance.currentEnemy.actAttack > 0)
+        if (EnemyManager.Instance.currentEnemy.actAttackNum > 0)
         {
             Transform actObj = FindBuffObjectFromHolder(3, "Act_Attack");
             if (actObj != null)
             {
-                actObj.GetComponent<Act>().numText.text = EnemyManager.Instance.currentEnemy.actAttack.ToString();
+                actObj.GetComponent<Act>().numText.text = EnemyManager.Instance.currentEnemy.actAttackNum.ToString();
             }
             else
             {
                 Act b = Instantiate(AllActs[0], enemyActHolder.transform).GetComponent<Act>();
-                b.numText.text = EnemyManager.Instance.currentEnemy.actAttack.ToString();
+                b.numText.text = EnemyManager.Instance.currentEnemy.actAttackNum.ToString();
                 b.belong = 1;
             }
         }else
@@ -134,17 +134,17 @@ public class UIManager : Singleton<UIManager>
         }
 
 
-        if (EnemyManager.Instance.currentEnemy.actArmorUp > 0)
+        if (EnemyManager.Instance.currentEnemy.actArmorUpNum > 0)
         {
             Transform actObj = FindBuffObjectFromHolder(3, "Act_ArmorUp");
             if (actObj != null)
             {
-                actObj.GetComponent<Act>().numText.text = EnemyManager.Instance.currentEnemy.actArmorUp.ToString();
+                actObj.GetComponent<Act>().numText.text = EnemyManager.Instance.currentEnemy.actArmorUpNum.ToString();
             }
             else
             {
                 Act b = Instantiate(AllActs[1], enemyActHolder.transform).GetComponent<Act>();
-                b.numText.text = EnemyManager.Instance.currentEnemy.actArmorUp.ToString();
+                b.numText.text = EnemyManager.Instance.currentEnemy.actArmorUpNum.ToString();
                 b.belong = 1;
             }
         }

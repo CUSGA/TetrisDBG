@@ -48,9 +48,11 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 0
   buffShield: 0
-  actAttack: 0
+  actAttackNum: 0
   actAttackTime: 0
-  actArmorUp: 0
-  actAtkNum: 5
-  actAtkTime: 10
   actArmorUpNum: 3
+  actArmorUpTime: 0
+  actAttackNum_I: 5
+  actAttackTime_I: 0
+  actArmorUpNum_I: 5
+  actArmorUpTime_I: 0

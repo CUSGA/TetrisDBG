@@ -42,15 +42,21 @@ public class GameManager : Singleton<GameManager>
     /// </summary>
     public void CreateNewTetromino()
     {
-        GameObject tet = Instantiate(Tetrominoes[Random.Range(0, Tetrominoes.Length)], spawner.position, Quaternion.identity);
-        int n = Mathf.RoundToInt(Random.Range(0f, PlayerManager.Instance.Deck.Length - 1));//随机在卡组中抽取一个Cube并生成
+        //随机在卡组中抽取一个Cube
+        int n = Mathf.FloorToInt(Random.Range(0f, PlayerManager.Instance.Deck.Length));
+        GameObject nCube = PlayerManager.Instance.Deck[n];
+        //在该Cube的可生成方块组合中随机抽一个
+        int m = Mathf.FloorToInt(Random.Range(0f, nCube.GetComponent<Cube>().cubeData.ableTet.Length));
+        m = nCube.GetComponent<Cube>().cubeData.ableTet[m];//抽到的方块组合的编号
+
+        GameObject tet = Instantiate(Tetrominoes[m], spawner.position, Quaternion.identity);
 
         //在生成的方块组合下的每个Holder下都生成一个Cube。
         foreach (Transform children in tet.transform)
         {
             if (children.name != "RotatePoint")
             {
-                children.GetComponent<CubeHolder>().SetCube(PlayerManager.Instance.Deck[n]);
+                children.GetComponent<CubeHolder>().SetCube(nCube);
             }
         }
     }

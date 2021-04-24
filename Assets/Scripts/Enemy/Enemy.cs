@@ -11,21 +11,24 @@ public class Enemy : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
 
-    [Header("Buff列表")]
+    //这里的Act和Buff列表是实时的，也就是说会随着游戏的进行受到某些效果影响而改变的。
+    //在各自的Enemy类里面存储的则是该Enemy的初始数据。
+    [Header("当前的Buff列表。检视用，不用修改。")]
     #region Buff列表，BuffList
 
     public int buffShield = 0;
 
     #endregion
 
-    [Header("Act列表")]
+    [Header("当前的Act列表。检视用，不用修改。")]
     #region Act列表，ActList
 
     //因为Attack动作比较特殊，不同敌人会有自己独特的攻击节奏，所以多一个属性来描述
-    public int actAttack = 0;
+    public int actAttackNum = 0;
     public float actAttackTime = 0;//该攻击动作触发时间，必须大于0，若为0的话就默认改为5
 
-    public int actArmorUp = 0;
+    public int actArmorUpNum = 0;
+    public float actArmorUpTime = 0;
 
     #endregion
 

@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class A_ArmorUp : Act
 {
+    private void Start()
+    {
+        if (EnemyManager.Instance.currentEnemy.actArmorUpTime > 0)
+        {
+            triggerTime = EnemyManager.Instance.currentEnemy.actArmorUpTime;
+        }
+        lastTriggerTime = triggerTime;
+    }
+
     //每次触发，所有者护盾+层数。
     public override void TriggerAction()
     {
@@ -13,13 +22,18 @@ public class A_ArmorUp : Act
             PlayerManager.Instance.buffShield += PlayerManager.Instance.actArmorUp;
         }else if (belong == 1)
         {
-            Debug.LogWarning("增加敌人的防御" + EnemyManager.Instance.currentEnemy.actArmorUp);
-            EnemyManager.Instance.currentEnemy.buffShield += EnemyManager.Instance.currentEnemy.actArmorUp;
+            Debug.LogWarning("增加敌人的防御" + EnemyManager.Instance.currentEnemy.actArmorUpNum);
+            EnemyManager.Instance.currentEnemy.buffShield += EnemyManager.Instance.currentEnemy.actArmorUpNum;
         }
         else
         {
             Debug.LogError("你Buff的归属搞错了");
         }
         UIManager.Instance.UpdateUI();
+    }
+
+    public override string GetInfo()
+    {
+        return "每 <color=red>" + triggerTime + "</color> 秒钟触发一次，每次增加 <color=red>" + EnemyManager.Instance.currentEnemy.actArmorUpNum + "</color> 层护甲。";
     }
 }

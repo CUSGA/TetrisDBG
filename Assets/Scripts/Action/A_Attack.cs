@@ -5,10 +5,14 @@ using UnityEngine;
 //这是最基础的攻击动作例子，说白了就是测试用的
 public class A_Attack : Act
 {
-    //因为Attack这个动作比较特殊，有两个参数来描述它，所以修改Start
     private void Start()
     {
-        triggerTime = EnemyManager.Instance.currentEnemy.actAttackTime;
+        //TODO: 所有者。所有的Act都要修改这里。
+        //若所有者的攻击动作的初值大于零，就用该值覆盖默认值。
+        if (EnemyManager.Instance.currentEnemy.actAttackTime > 0)
+        {
+            triggerTime = EnemyManager.Instance.currentEnemy.actAttackTime;
+        }
         lastTriggerTime = triggerTime;
     }
 
@@ -20,8 +24,13 @@ public class A_Attack : Act
         }
         else if (belong == 1)
         {
-            PlayerManager.Instance.BeAttack(EnemyManager.Instance.currentEnemy.actAttack);
+            PlayerManager.Instance.BeAttack(EnemyManager.Instance.currentEnemy.actAttackNum);
         }
         //这里的UpdateUI在BeAttack中执行了，不用在这里调用。
+    }
+
+    public override string GetInfo()
+    {
+        return "每隔 <color=red>" + triggerTime + "</color> 秒触发一次，每次对对方造成 <color=red>" + EnemyManager.Instance.currentEnemy.actAttackNum + "</color> 点伤害。";
     }
 }
