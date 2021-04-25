@@ -6,6 +6,6 @@ public class C_Attack : Cube
 {
     public override void ClearAction()
     {
-        GameManager.Instance.effectAttack += 1;
+        BattleManager.Instance.effectAttack += 1;
     }
 }

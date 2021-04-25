@@ -27,8 +27,14 @@ public class PlayerManager : Singleton<PlayerManager>
     public int actAttackTime = 0;//该攻击动作触发时间，必须大于0，若为0的话就默认改为5
 
     public int actArmorUp = 0;
+    public int actArmorUpTime = 0;
 
     #endregion
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
 
     private void Start()
     {
@@ -61,5 +67,18 @@ public class PlayerManager : Singleton<PlayerManager>
 
         //更新UI显示
         UIManager.Instance.UpdateUI();
+    }
+
+    /// <summary>
+    /// 重置所有Buff和Act
+    /// </summary>
+    public void ResetState()
+    {
+        buffShield = 0;
+
+        actAttack = 0;
+        actAttackTime = 0;
+        actArmorUp = 0;
+        actArmorUpTime = 0;
     }
 }

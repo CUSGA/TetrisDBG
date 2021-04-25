@@ -6,6 +6,6 @@ public class C_Shield : Cube
 {
     public override void ClearAction()
     {
-        GameManager.Instance.effectShield += 1;
+        BattleManager.Instance.effectShield += 1;
     }
 }

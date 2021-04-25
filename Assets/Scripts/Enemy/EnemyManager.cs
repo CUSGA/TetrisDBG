@@ -15,8 +15,6 @@ public class EnemyManager : Singleton<EnemyManager>
 
     private void Start()
     {
-        //TODO: 也是测试用，以后要改成由关卡相关脚本调用的。
-        SetEnemy(enemyTest);
     }
 
     /// <summary>

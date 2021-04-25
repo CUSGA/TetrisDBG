@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //负责游戏逻辑部分，包括生成新方块组合，检查行满并消除等。
-public class GameManager : Singleton<GameManager>
+public class BattleManager : Singleton<BattleManager>
 {
     [Tooltip("掉落间隔")]
     public float fallTime;

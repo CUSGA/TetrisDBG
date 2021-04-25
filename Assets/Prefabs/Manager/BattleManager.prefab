@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3800476146616227188
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3800476146616227190}
+  - component: {fileID: 3800476146616227189}
+  m_Layer: 0
+  m_Name: BattleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3800476146616227190
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3800476146616227188}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.4670362, y: 3.5810187, z: -242.98944}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3800476146616227189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3800476146616227188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48b76f4776d5bed47a0d3d015895510a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallTime: 0.8
+  previousTime: 0
+  Tetrominoes:
+  - {fileID: 5992360008940916435, guid: a05a3204d3894cb409f6623afc456186, type: 3}
+  - {fileID: 6118741179021220225, guid: f5a854203d7fef649bff03b3ec031226, type: 3}
+  - {fileID: 4336449192648399267, guid: cb4b145ceac6fa74a8ee592806ced260, type: 3}
+  - {fileID: 7164107930378111186, guid: 29cd0e00187e24f44b2066b8a59fc779, type: 3}
+  - {fileID: 1590690713908774822, guid: f5e5a7d583ac1f0428490dcf840f6f66, type: 3}
+  - {fileID: 2966569990212042366, guid: 89316fe6d7a311c478d312546533a5f5, type: 3}
+  - {fileID: 4318298124026020710, guid: 3b4186b69727ce24689eb7904aa229cc, type: 3}
+  - {fileID: 6158417751268843301, guid: a361f8e0122e84c4eb4fd0400f27c5d6, type: 3}
+  spawner: {fileID: 0}
+  effectAttack: 0
+  effectShield: 0

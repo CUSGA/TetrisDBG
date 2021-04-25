@@ -18,7 +18,7 @@ public class Tetromino : MonoBehaviour
     {
         get
         {
-            return GameManager.Instance.fallTime;
+            return BattleManager.Instance.fallTime;
         }
     }
 
@@ -26,11 +26,11 @@ public class Tetromino : MonoBehaviour
     {
         get
         {
-            return GameManager.Instance.previousTime;
+            return BattleManager.Instance.previousTime;
         }
         set
         {
-            GameManager.Instance.previousTime = value;
+            BattleManager.Instance.previousTime = value;
         }
     }
 
@@ -76,7 +76,7 @@ public class Tetromino : MonoBehaviour
                     //若已无法下落，就把方块组合记录入方块数组，并停止一切移动并生成一个新方块组合
                     AddToGrid();
                     //检查是否有行已被填满
-                    GameManager.Instance.CheckForLines();
+                    BattleManager.Instance.CheckForLines();
                     moveAble = false;
                 }
                 //重置下落时间计时器
@@ -100,14 +100,14 @@ public class Tetromino : MonoBehaviour
                 int roundedY = Mathf.RoundToInt(children.transform.position.y);
 
                 //检查是否出界
-                if (roundedX < 0 || roundedX >= GameManager.width || roundedY < 0 || roundedY >= GameManager.height)
+                if (roundedX < 0 || roundedX >= BattleManager.width || roundedY < 0 || roundedY >= BattleManager.height)
                 {
                     //DEBUG: Debug.Log("因为出界而无法移动");
                     return false;
                 }
 
                 //检查是否和其他已经放好的方块重叠。
-                if (GameManager.Instance.grid[roundedX, roundedY] != null)
+                if (BattleManager.Instance.grid[roundedX, roundedY] != null)
                 {
                     //DEBUG: Debug.Log("因为碰到其他方块而无法移动：" + GameManager.Instance.grid[roundedX, roundedY] + "其父类是：" + GameManager.Instance.grid[roundedX, roundedY].parent.name);
                     return false;
@@ -130,7 +130,7 @@ public class Tetromino : MonoBehaviour
                 int roundedX = Mathf.RoundToInt(children.transform.position.x);
                 int roundedY = Mathf.RoundToInt(children.transform.position.y);
 
-                GameManager.Instance.grid[roundedX, roundedY] = children;
+                BattleManager.Instance.grid[roundedX, roundedY] = children;
             }
         }
     }
@@ -177,7 +177,7 @@ public class Tetromino : MonoBehaviour
                 int roundedX = Mathf.RoundToInt(children.transform.position.x);
                 int roundedY = Mathf.RoundToInt(children.transform.position.y);
 
-                GameManager.Instance.grid[roundedX, roundedY] = null;
+                BattleManager.Instance.grid[roundedX, roundedY] = null;
             }
         }
     }

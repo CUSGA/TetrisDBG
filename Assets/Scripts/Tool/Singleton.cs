@@ -15,6 +15,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
                     _instance = FindObjectOfType<T>(true);
                 else
                 {
+                    Debug.LogWarning("调用" + typeof(T).ToString() +  "时空引用，当场生成了一个");
                     GameObject obj = new GameObject();
                     _instance = obj.AddComponent<T>();
                     obj.name = typeof(T).ToString();

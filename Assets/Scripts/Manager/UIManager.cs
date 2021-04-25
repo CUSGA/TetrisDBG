@@ -28,6 +28,7 @@ public class UIManager : Singleton<UIManager>
 
     [Header("别的")]
     public Tooltip tooltip;
+    public GameObject deckExplorer;
     
     private float originalSize1;
     private float originalSize2;
@@ -47,7 +48,7 @@ public class UIManager : Singleton<UIManager>
         //更新Player的Buff显示
         UpdatePlayerBuffUI();
 
-        //TODO: 更新Enemy相关的UI
+        //更新Enemy相关的UI
         UpdateEnemyHealthUI();
         UpdateEnemyBuffUI();
         UpdateEnemyActUI();
@@ -219,5 +220,10 @@ public class UIManager : Singleton<UIManager>
 
         Debug.LogError("在FindBuffObjectFromHolder中，输入的第一个参数t不符合规范（不是0或1）！");
         return null;
+    }
+
+    public void OpenDeckExplorer()
+    {
+        deckExplorer.SetActive(true);
     }
 }
