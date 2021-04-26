@@ -7,6 +7,7 @@ public abstract class Cube : MonoBehaviour
 {
     public SO_CubeData cubeData;
 
+    [HideInInspector]
     public SpriteRenderer background;
     public SpriteRenderer icon;
 

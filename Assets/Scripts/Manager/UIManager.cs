@@ -136,13 +136,13 @@ public class UIManager : Singleton<UIManager>
                 b.numText.text = EnemyManager.Instance.currentEnemy.actAttackNum.ToString();
                 b.belong = 1;
             }
-        }else
+        }
+        else
         {
             Transform actObj = FindBuffObjectFromHolder(3, "Act_Attack");
             if (actObj != null)
                 Destroy(actObj.gameObject);
         }
-
 
         if (EnemyManager.Instance.currentEnemy.actArmorUpNum > 0)
         {
@@ -161,6 +161,27 @@ public class UIManager : Singleton<UIManager>
         else
         {
             Transform actObj = FindBuffObjectFromHolder(3, "Act_ArmorUp");
+            if (actObj != null)
+                Destroy(actObj.gameObject);
+        }
+
+        if (EnemyManager.Instance.currentEnemy.actAirRaidNum > 0)
+        {
+            Transform actObj = FindBuffObjectFromHolder(3, "Act_AirRaid");
+            if (actObj != null)
+            {
+                actObj.GetComponent<Act>().numText.text = EnemyManager.Instance.currentEnemy.actAirRaidNum.ToString();
+            }
+            else
+            {
+                Act b = Instantiate(AllActs[2], enemyActHolder.transform).GetComponent<Act>();
+                b.numText.text = EnemyManager.Instance.currentEnemy.actAirRaidNum.ToString();
+                b.belong = 1;
+            }
+        }
+        else
+        {
+            Transform actObj = FindBuffObjectFromHolder(3, "Act_AirRaid");
             if (actObj != null)
                 Destroy(actObj.gameObject);
         }

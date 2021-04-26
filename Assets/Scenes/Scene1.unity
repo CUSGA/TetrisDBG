@@ -499,17 +499,6 @@ Transform:
   m_Father: {fileID: 718094509}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &91959806 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6588410713802434855, guid: e32b9b281ff6e334f944dd5dc75023c4, type: 3}
-  m_PrefabInstance: {fileID: 1324288682}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb58c3b32dd73204e8060363b9fe50f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &98055675 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8006980933962171137, guid: bb5e4d8236d9b064a80a4d4c156a6cef, type: 3}
@@ -1659,6 +1648,7 @@ GameObject:
   - component: {fileID: 506271654}
   - component: {fileID: 506271653}
   - component: {fileID: 506271652}
+  - component: {fileID: 506271655}
   m_Layer: 5
   m_Name: BackToMapButton
   m_TagString: Untagged
@@ -1730,9 +1720,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 91959806}
-        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: TransitionToMapScene
+      - m_Target: {fileID: 506271655}
+        m_TargetAssemblyTypeName: BackToMapButton, Assembly-CSharp
+        m_MethodName: BackToMap
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1780,6 +1770,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506271650}
   m_CullTransparentMesh: 1
+--- !u!114 &506271655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506271650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ff04dabd9ab1e946b86e44c166df90b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -4908,6 +4910,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1961852731097144860, guid: 539946cdce4d55c49ae0f9905d752f54, type: 3}
+      propertyPath: enemyTest
+      value: 
+      objectReference: {fileID: 2882346291036547921, guid: f9b20f6eb10172a4d9823aa0ca08e409, type: 3}
     - target: {fileID: 1961852731097144861, guid: 539946cdce4d55c49ae0f9905d752f54, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -5156,9 +5162,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 635347336}
     - target: {fileID: 4786206628721208476, guid: eea821be840a00f4188b73309bbf61fe, type: 3}
+      propertyPath: AllActs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786206628721208476, guid: eea821be840a00f4188b73309bbf61fe, type: 3}
       propertyPath: playerHealthSlider
       value: 
       objectReference: {fileID: 577445201}
+    - target: {fileID: 4786206628721208476, guid: eea821be840a00f4188b73309bbf61fe, type: 3}
+      propertyPath: AllActs.Array.data[2]
+      value: 
+      objectReference: {fileID: 5033740491804421688, guid: 2f31b055f0e29514ea40025739bfd6d7, type: 3}
     - target: {fileID: 4786206628721208477, guid: eea821be840a00f4188b73309bbf61fe, type: 3}
       propertyPath: m_RootOrder
       value: 9

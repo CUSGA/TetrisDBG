@@ -30,6 +30,9 @@ public class Enemy : MonoBehaviour
     public int actArmorUpNum = 0;
     public float actArmorUpTime = 0;
 
+    public int actAirRaidNum = 0;
+    public int actAirRaidTime = 0;
+
     #endregion
 
     protected void Start()

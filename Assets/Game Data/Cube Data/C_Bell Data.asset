@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: C_Bell Data
   m_EditorClassIdentifier: 
   cubeName: "\u54CD\u94C3"
-  cubeEnName: 
+  cubeEnName: Bell
   cubeCode: 2
   cubeIcon: {fileID: 21300000, guid: a32cc4e6b43c64b06b86e1c569143ea7, type: 3}
   bgColor: {r: 1, g: 0.8666667, b: 0.19999999, a: 1}

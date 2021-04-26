@@ -8,4 +8,14 @@ public class BattleButton : MonoBehaviour
     {
         SceneController.Instance.TransitionToRandomStage();
     }
+
+    public void TransToTestBattle()
+    {
+        SceneController.Instance.TransitionToBattleScene(StageManager.Instance.AllStage[0]);
+    }
+
+    public void TransToBomberAirShipBattle()
+    {
+        SceneController.Instance.TransitionToBattleScene(StageManager.Instance.AllStage[1]);
+    }
 }

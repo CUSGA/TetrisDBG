@@ -14,8 +14,9 @@ public class SceneController : Singleton<SceneController>
         TransitionToBattleScene(enemyPrefab);
     }
 
-    private void Awake()
+    private new void Awake()
     {
+        base.Awake();
         DontDestroyOnLoad(this);
     }
 
@@ -38,21 +39,22 @@ public class SceneController : Singleton<SceneController>
         Debug.Log("开始加载场景");
         StartCoroutine(IETransitionToBattleScene(stage.GetComponent<Stage>().enemy));
         stage.GetComponent<Stage>().StageAbility();
+        PlayerManager.Instance.ResetTempDeck();
     }
 
     IEnumerator IETransitionToBattleScene(GameObject stage)
     {
         //TODO: 记得这里，切换场景时改名
         yield return SceneManager.LoadSceneAsync("Scene1");
-        //TODO: 这里为了测试所以stage就是Enemy，之后要改成从stage中读取Enemy
         EnemyManager.Instance.SetEnemy(stage);
         yield return null;
     }
 
-    //TODO: 从战斗场景切换回地图场景的方法
+    //从战斗场景切换回地图场景的方法
     public void TransitionToMapScene()
     {
         StartCoroutine(IETransitionToMapScene());
+        PlayerManager.Instance.ResetTempDeck();
     }
 
     IEnumerator IETransitionToMapScene()

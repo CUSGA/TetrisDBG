@@ -19,13 +19,11 @@ public abstract class Act : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public Image img;
     public Text numText;
     public Image triggerCover;
-    [Tooltip("该Act多长时间触发，若为0代表不触发（被动效果）")]
+    [Tooltip("该Act多长时间触发，若为0代表不按照时间触发（持续效果、一次性效果、被动触发效果）")]
     public float triggerTime;
     protected float lastTriggerTime;//定时时间计数器
 
-    /// <summary>
-    /// 记录该Buff的归属。0代表玩家，1代表敌人。
-    /// </summary>
+    [Tooltip("记录该Buff的归属。0代表玩家，1代表敌人。")]
     public int belong;//该Buff的持有者，是敌人还是玩家
 
     private void Start()

@@ -24,5 +24,15 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
             return _instance;
         }
     }
+
+    protected void Awake()
+    {
+        //如果在场景中已经有了除自己以外的该instance（数量大于1），就把自己删除。
+        var a = Instance;//这是为了初始化一下_instance，不然场景中还是会有2个gameObject
+        if (_instance != null && _instance.gameObject != gameObject)
+        {
+            Destroy(gameObject);
+        }
+    }
 }
 

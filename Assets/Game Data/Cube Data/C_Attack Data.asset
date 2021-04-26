@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: C_Attack Data
   m_EditorClassIdentifier: 
   cubeName: "\u653B\u51FB"
-  cubeEnName: 
+  cubeEnName: Attack
   cubeCode: 0
   cubeIcon: {fileID: 21300000, guid: ff5e7ce4ead884cf5a347a471a1b84e0, type: 3}
   bgColor: {r: 1, g: 0, b: 0, a: 1}

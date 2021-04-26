@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 379e17972cf67414d9e28530b69e73a1, type: 3}
-  m_Name: C_Shield Data
+  m_Name: C_Bomb Data
   m_EditorClassIdentifier: 
-  cubeName: "\u9632\u5FA1"
-  cubeEnName: Shield
-  cubeCode: 1
-  cubeIcon: {fileID: 21300000, guid: 56ae65b9f06f14aa49872c79b9fba168, type: 3}
-  bgColor: {r: 0, g: 0.5, b: 1, a: 1}
+  cubeName: "\u70B8\u5F39"
+  cubeEnName: Bomb
+  cubeCode: 3
+  cubeIcon: {fileID: 21300000, guid: fcd31006eb6ee4f30b6992e7c6876d4a, type: 3}
+  bgColor: {r: 0.25, g: 0.25, b: 0.25, a: 1}
   ableTet: 00000000010000000200000003000000040000000500000006000000
-  description: "\u6B64\u65B9\u5757\u88AB\u6D88\u9664\u65F6\uFF0C\u589E\u52A01\u70B9\u62A4\u76FE\u3002"
+  description: "\u6B64\u65B9\u5757\u88AB\u6D88\u9664\u65F6\uFF0C\u5BF9\u73A9\u5BB6\u9020\u62103\u70B9\u4F24\u5BB3\u3002"

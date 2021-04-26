@@ -10,7 +10,10 @@ public class PlayerManager : Singleton<PlayerManager>
 
     //TODO: 这个卡组应该改成List类型
     [Tooltip("当前能够召唤出来的所有Cube类型，也就是玩家的卡组")]
-    public GameObject[] Deck;
+    public List<GameObject> Deck = new List<GameObject>();
+    [HideInInspector]
+    public List<GameObject> tempDeck = new List<GameObject>();
+    //public GameObject[] Deck;
 
     [Header("Buff列表")]
     #region Buff列表 BuffList
@@ -31,8 +34,9 @@ public class PlayerManager : Singleton<PlayerManager>
 
     #endregion
 
-    private void Awake()
+    private new void Awake()
     {
+        base.Awake();
         DontDestroyOnLoad(this);
     }
 
@@ -40,6 +44,8 @@ public class PlayerManager : Singleton<PlayerManager>
     {
         //TODO: 血量这里每次开战都回满，测试用的权宜之计。
         currentHealth = maxHealth;
+
+        ResetTempDeck();
     }
 
     /// <summary>
@@ -80,5 +86,17 @@ public class PlayerManager : Singleton<PlayerManager>
         actAttackTime = 0;
         actArmorUp = 0;
         actArmorUpTime = 0;
+    }
+
+    /// <summary>
+    /// 把临时卡组tempDeck还原回玩家卡组Deck的内容
+    /// </summary>
+    public void ResetTempDeck()
+    {
+        tempDeck.Clear();
+        foreach (GameObject item in Deck)
+        {
+            tempDeck.Add(item);
+        }
     }
 }

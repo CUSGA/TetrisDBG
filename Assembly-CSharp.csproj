@@ -74,6 +74,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\Scripts\Tetromino.cs" />
     <Compile Include="Assets\Scripts\UI\DeckCube.cs" />
+    <Compile Include="Assets\Scripts\UI\MapUI\ShowDeckButton.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Scripts\Buff\Buff.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="Assets\Scripts\Manager\UIManager.cs" />
     <Compile Include="Assets\Scripts\Buff\B_Shield.cs" />
     <Compile Include="Assets\Scripts\Scene\SnowController.cs" />
+    <Compile Include="Assets\Scripts\Manager\MapUIManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Stage\Stage.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
@@ -119,8 +121,11 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\Cubes\Cube.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
-    <Compile Include="Assets\Scripts\UI\MapUI\ShowDeckButton.cs" />
-    <Compile Include="Assets\Scripts\Manager\MapUIManager.cs" />
+    <Compile Include="Assets\Scripts\Action\A_AirRaid.cs" />
+    <Compile Include="Assets\Scripts\Cubes\C_Bomb.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Enemy_BomberAirShip.cs" />
+    <Compile Include="Assets\Scripts\Stage\Stage_BomberAirShip.cs" />
+    <Compile Include="Assets\Scripts\UI\BattleSceneUI\BackToMapButton.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

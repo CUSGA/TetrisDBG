@@ -23,7 +23,7 @@ public class DeckExplorer : MonoBehaviour
         }
 
         //然后从PlayerManager中读取数据放置方块
-        foreach (GameObject item in PlayerManager.Instance.Deck)
+        foreach (GameObject item in PlayerManager.Instance.tempDeck)
         {
             int n = item.GetComponent<Cube>().cubeData.cubeCode;
             Instantiate(arrDeckCube[n], desktop);

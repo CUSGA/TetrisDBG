@@ -24,6 +24,7 @@ public class BattleManager : Singleton<BattleManager>
 
     public int effectAttack = 0;
     public int effectShield = 0;
+    public int effectBeAttack = 0;
 
     #endregion
 
@@ -43,8 +44,8 @@ public class BattleManager : Singleton<BattleManager>
     public void CreateNewTetromino()
     {
         //随机在卡组中抽取一个Cube
-        int n = Mathf.FloorToInt(Random.Range(0f, PlayerManager.Instance.Deck.Length));
-        GameObject nCube = PlayerManager.Instance.Deck[n];
+        int n = Mathf.FloorToInt(Random.Range(0f, PlayerManager.Instance.tempDeck.Count));
+        GameObject nCube = PlayerManager.Instance.tempDeck[n];
         //在该Cube的可生成方块组合中随机抽一个
         int m = Mathf.FloorToInt(Random.Range(0f, nCube.GetComponent<Cube>().cubeData.ableTet.Length));
         m = nCube.GetComponent<Cube>().cubeData.ableTet[m];//抽到的方块组合的编号
@@ -119,7 +120,7 @@ public class BattleManager : Singleton<BattleManager>
         }
 
         //TODO: 显示文字告知该行效果
-        Debug.Log("攻击：" + effectAttack + "，护盾：" + effectShield);
+        Debug.Log("攻击：" + effectAttack + "，护盾：" + effectShield + "，受到伤害：" + effectBeAttack);
 
         HandleEffect();
 
@@ -140,6 +141,9 @@ public class BattleManager : Singleton<BattleManager>
 
         //增加护盾（加护盾Buff）
         PlayerManager.Instance.buffShield += effectShield;
+
+        //玩家受到伤害
+        PlayerManager.Instance.BeAttack(effectBeAttack);
     }
 
     /// <summary>
@@ -149,6 +153,7 @@ public class BattleManager : Singleton<BattleManager>
     {
         effectAttack = 0;
         effectShield = 0;
+        effectBeAttack = 0;
     }
 
     /// <summary>
