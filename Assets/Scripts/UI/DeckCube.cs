@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DeckCube : MonoBehaviour//BREAKPOINT: 鼠标悬停/悬停离开
 {
-    //BREAKPOINT: 文本
-    //BREAKPOINT: CubeData
+    public Text numText;
+    public Image cubeImage;
+
+    public void SetCube(GameObject cube)
+    {
+        cubeImage.sprite = cube.GetComponent<Cube>().cubeData.cubeIcon;
+    }
 }

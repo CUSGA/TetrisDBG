@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPoint: {fileID: 1961852731097144861}
-  enemyTest: {fileID: 3722838600836491795, guid: e066845a9525d2348982b9b807d11555, type: 3}
+  enemyTest: {fileID: 2882346291036547921, guid: f9b20f6eb10172a4d9823aa0ca08e409, type: 3}
   currentEnemy: {fileID: 0}

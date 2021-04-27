@@ -46,10 +46,15 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   Deck:
-  - {fileID: 8989566570439505539, guid: 66948b6e721e1b540bf77b3c978cedb7, type: 3}
+  - {fileID: 6917729031394828760, guid: 14fa08e4cde72da4ba108899851f019a, type: 3}
+  - {fileID: 3544371884764239745, guid: 2fad5657fc6b7db4d9d9bcefe7cb924d, type: 3}
   - {fileID: 8989566570439505539, guid: d820fc108cf4d1d4dbf98b74660b66f7, type: 3}
-  - {fileID: 1106407909558450090, guid: 8190ccd8077e36c41ac8fd7bee8fa1d3, type: 3}
+  tempDeck: []
   buffShield: 0
-  actAttack: 0
+  buffShieldMultiplyChip: 0
+  buffShieldMultiply: 0
+  buffAttackChip: 0
+  actAttackNum: 0
   actAttackTime: 0
-  actArmorUp: 0
+  actArmorUpNum: 0
+  actArmorUpTime: 0

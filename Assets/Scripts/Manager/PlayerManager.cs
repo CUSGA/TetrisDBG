@@ -20,17 +20,22 @@ public class PlayerManager : Singleton<PlayerManager>
 
     public int buffShield = 0;
 
+    public int buffShieldMultiplyChip = 0;
+    public int buffShieldMultiply = 0;
+
+    public int buffAttackChip = 0;
+
     #endregion
 
     [Header("Act列表")]
     #region Act列表，ActList
 
     //因为Attack动作比较特殊，不同敌人会有自己独特的攻击节奏，所以多一个属性来描述
-    public int actAttack = 0;
-    public int actAttackTime = 0;//该攻击动作触发时间，必须大于0，若为0的话就默认改为5
+    public int actAttackNum = 0;
+    public float actAttackTime = 0;//该攻击动作触发时间，必须大于0，若为0的话就默认改为5
 
-    public int actArmorUp = 0;
-    public int actArmorUpTime = 0;
+    public int actArmorUpNum = 0;
+    public float actArmorUpTime = 0;
 
     #endregion
 
@@ -82,9 +87,9 @@ public class PlayerManager : Singleton<PlayerManager>
     {
         buffShield = 0;
 
-        actAttack = 0;
+        actAttackNum = 0;
         actAttackTime = 0;
-        actArmorUp = 0;
+        actArmorUpNum = 0;
         actArmorUpTime = 0;
     }
 

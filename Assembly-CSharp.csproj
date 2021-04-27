@@ -80,13 +80,17 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Enemy_BomberAirShip.cs" />
     <Compile Include="Assets\Scripts\Manager\StageManager.cs" />
+    <Compile Include="Assets\Scripts\UI\BattleSceneUI\BackToMapButton.cs" />
     <Compile Include="Assets\Scripts\Manager\BattleManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\Stage\Stage_Test_1.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
+    <Compile Include="Assets\Scripts\Stage\Stage_BomberAirShip.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy_Basic.cs" />
+    <Compile Include="Assets\Scripts\Cubes\C_Bomb.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\Cubes\Tools\SO_CubeData.cs" />
@@ -106,6 +110,7 @@
     <Compile Include="Assets\Scripts\Manager\MapUIManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Stage\Stage.cs" />
+    <Compile Include="Assets\Scripts\Action\A_AirRaid.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
@@ -121,16 +126,20 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\Cubes\Cube.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
-    <Compile Include="Assets\Scripts\Action\A_AirRaid.cs" />
-    <Compile Include="Assets\Scripts\Cubes\C_Bomb.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Enemy_BomberAirShip.cs" />
-    <Compile Include="Assets\Scripts\Stage\Stage_BomberAirShip.cs" />
-    <Compile Include="Assets\Scripts\UI\BattleSceneUI\BackToMapButton.cs" />
+    <Compile Include="Assets\Scripts\Cubes\C_PoweredAttack.cs" />
+    <Compile Include="Assets\Scripts\Cubes\C_ShieldMultiplyChip.cs" />
+    <Compile Include="Assets\Scripts\Buff\B_ShieldMultiplyChip.cs" />
+    <Compile Include="Assets\Scripts\Buff\B_ShieldMultiply.cs" />
+    <Compile Include="Assets\Scripts\Cubes\C_AttackChip.cs" />
+    <Compile Include="Assets\Scripts\Buff\B_AttackChip.cs" />
+    <Compile Include="Assets\Scripts\Shop\GoodHolder.cs" />
+    <Compile Include="Assets\Scripts\Manager\ShopManager.cs" />
+    <Compile Include="Assets\Scripts\Manager\ShopUIManager.cs" />
+    <Compile Include="Assets\Scripts\UI\MapUI\ShopButton.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
-     <None Include="Assets\说明文档.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
      <None Include="Assets\Shaders\Bricks.shader" />

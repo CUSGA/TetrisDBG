@@ -24,6 +24,6 @@ public class B_Shield : Buff
 
     public override string GetInfo()
     {
-        return "每层护盾可抵消1点受到的伤害。\n每隔 <color=red>" + triggerTime +"</color> 秒触发一次，每次减少一层护盾。";
+        return "每层护盾可抵消1点受到的伤害。\n每隔 <color=red>" + triggerTime + "</color> 秒触发一次，每次减少 <color=red>" + 1 + "</color> 层护盾。";
     }
 }

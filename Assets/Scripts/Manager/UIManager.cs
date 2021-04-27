@@ -47,7 +47,9 @@ public class UIManager : Singleton<UIManager>
         UpdatePlayerHealthUI();
         //更新Player的Buff显示
         UpdatePlayerBuffUI();
-
+        //更新Player的Act显示
+        UpdatePlayerActUI();
+        
         //更新Enemy相关的UI
         UpdateEnemyHealthUI();
         UpdateEnemyBuffUI();
@@ -87,6 +89,99 @@ public class UIManager : Singleton<UIManager>
             Transform buffObj = FindBuffObjectFromHolder(0, "Buff_Shield");
             if (buffObj != null)
                 Destroy(buffObj.gameObject);
+        }
+
+        if (PlayerManager.Instance.buffShieldMultiplyChip > 0)
+        {
+            //遍历查询playerBuffHolder下是否已经有Shield的Buff标志
+            Transform buffObj = FindBuffObjectFromHolder(0, "Buff_ShieldMultiplyChip");
+            if (buffObj != null)//若找到，也就是说当前已经有生成该buff物体，就更改它的显示数字
+            {
+                buffObj.GetComponent<Buff>().numText.text = PlayerManager.Instance.buffShieldMultiplyChip.ToString();
+            }
+            else//若没有找到，也就是说当前没有生成该buff物体，就生成一个并赋值修改显示数字
+            {
+                Buff b = Instantiate(AllBuffs[1], playerBuffHolder.transform).GetComponent<Buff>();
+                b.numText.text = PlayerManager.Instance.buffShieldMultiplyChip.ToString();
+                b.belong = 0;
+            }
+        }
+        else//若buff数字小于等于0，就把当前有的buff物体删除掉
+        {
+            //遍历查询playerBuffHolder下是否已经有Shield的Buff标志
+            Transform buffObj = FindBuffObjectFromHolder(0, "Buff_ShieldMultiplyChip");
+            if (buffObj != null)
+                Destroy(buffObj.gameObject);
+        }
+
+        if (PlayerManager.Instance.buffShieldMultiply > 0)
+        {
+            //遍历查询playerBuffHolder下是否已经有Shield的Buff标志
+            Transform buffObj = FindBuffObjectFromHolder(0, "Buff_ShieldMultiply");
+            if (buffObj != null)//若找到，也就是说当前已经有生成该buff物体，就更改它的显示数字
+            {
+                buffObj.GetComponent<Buff>().numText.text = PlayerManager.Instance.buffShieldMultiply.ToString();
+            }
+            else//若没有找到，也就是说当前没有生成该buff物体，就生成一个并赋值修改显示数字
+            {
+                Buff b = Instantiate(AllBuffs[2], playerBuffHolder.transform).GetComponent<Buff>();
+                b.numText.text = PlayerManager.Instance.buffShieldMultiply.ToString();
+                b.belong = 0;
+            }
+        }
+        else//若buff数字小于等于0，就把当前有的buff物体删除掉
+        {
+            //遍历查询playerBuffHolder下是否已经有Shield的Buff标志
+            Transform buffObj = FindBuffObjectFromHolder(0, "Buff_ShieldMultiply");
+            if (buffObj != null)
+                Destroy(buffObj.gameObject);
+        }
+
+        if (PlayerManager.Instance.buffAttackChip > 0)
+        {
+            //遍历查询playerBuffHolder下是否已经有Shield的Buff标志
+            Transform buffObj = FindBuffObjectFromHolder(0, "Buff_AttackChip");//修改
+            if (buffObj != null)//若找到，也就是说当前已经有生成该buff物体，就更改它的显示数字
+            {
+                buffObj.GetComponent<Buff>().numText.text = PlayerManager.Instance.buffAttackChip.ToString();//修改
+            }
+            else//若没有找到，也就是说当前没有生成该buff物体，就生成一个并赋值修改显示数字
+            {
+                Buff b = Instantiate(AllBuffs[3], playerBuffHolder.transform).GetComponent<Buff>();//修改
+                b.numText.text = PlayerManager.Instance.buffAttackChip.ToString();//修改
+                b.belong = 0;
+            }
+        }
+        else//若buff数字小于等于0，就把当前有的buff物体删除掉
+        {
+            //遍历查询playerBuffHolder下是否已经有Shield的Buff标志
+            Transform buffObj = FindBuffObjectFromHolder(0, "Buff_AttackChip");//修改
+            if (buffObj != null)
+                Destroy(buffObj.gameObject);
+        }
+    }
+
+    private void UpdatePlayerActUI()
+    {
+        if (PlayerManager.Instance.actAttackNum > 0)
+        {
+            Transform actObj = FindBuffObjectFromHolder(2, "Act_Attack");
+            if (actObj != null)
+            {
+                actObj.GetComponent<Act>().numText.text = PlayerManager.Instance.actAttackNum.ToString();
+            }
+            else
+            {
+                Act b = Instantiate(AllActs[0], playerActHolder.transform).GetComponent<Act>();
+                b.numText.text = PlayerManager.Instance.actAttackNum.ToString();
+                b.belong = 0;
+            }
+        }
+        else
+        {
+            Transform actObj = FindBuffObjectFromHolder(2, "Act_Attack");
+            if (actObj != null)
+                Destroy(actObj.gameObject);
         }
     }
 

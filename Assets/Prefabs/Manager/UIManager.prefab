@@ -53,7 +53,11 @@ MonoBehaviour:
   enemyActHolder: {fileID: 0}
   AllBuffs:
   - {fileID: 7961368002243100620, guid: 4c367b21e0ed86c44addabc6eafb82be, type: 3}
+  - {fileID: 6307076522653786084, guid: a62938befd01a87488e741a025fe43a1, type: 3}
+  - {fileID: 7504070237724696811, guid: 8178f63a946f31349b3813eb735cc323, type: 3}
   AllActs:
   - {fileID: 9218688184760771802, guid: e7c65f67fcecb344aaf1299eb7062c86, type: 3}
   - {fileID: 4895565580955583700, guid: 43e870fbc1219554cb9b51a628a4f2ed, type: 3}
+  - {fileID: 5033740491804421688, guid: 2f31b055f0e29514ea40025739bfd6d7, type: 3}
   tooltip: {fileID: 0}
+  deckExplorer: {fileID: 0}

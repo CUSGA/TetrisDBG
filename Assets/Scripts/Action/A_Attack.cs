@@ -9,9 +9,19 @@ public class A_Attack : Act
     {
         //TODO: 所有者。所有的Act都要修改这里。
         //若所有者的攻击动作的初值大于零，就用该值覆盖默认值。
-        if (EnemyManager.Instance.currentEnemy.actAttackTime > 0)
+        if (belong == 0)
         {
-            triggerTime = EnemyManager.Instance.currentEnemy.actAttackTime;
+            if (PlayerManager.Instance.actAttackTime > 0)
+            {
+                triggerTime = PlayerManager.Instance.actAttackTime;
+            }
+        }
+        if (belong == 1)
+        {
+            if (EnemyManager.Instance.currentEnemy.actAttackTime > 0)
+            {
+                triggerTime = EnemyManager.Instance.currentEnemy.actAttackTime;
+            }
         }
         lastTriggerTime = triggerTime;
     }
@@ -20,7 +30,7 @@ public class A_Attack : Act
     {
         if (belong == 0)
         {
-            EnemyManager.Instance.currentEnemy.BeAttack(PlayerManager.Instance.actAttack);
+            EnemyManager.Instance.currentEnemy.BeAttack(PlayerManager.Instance.actAttackNum);
         }
         else if (belong == 1)
         {
@@ -31,6 +41,13 @@ public class A_Attack : Act
 
     public override string GetInfo()
     {
-        return "每隔 <color=red>" + triggerTime + "</color> 秒触发一次，每次对对方造成 <color=red>" + EnemyManager.Instance.currentEnemy.actAttackNum + "</color> 点伤害。";
+        if (belong == 0)
+        {
+            return "每隔 <color=red>" + triggerTime + "</color> 秒触发一次，每次对对方造成 <color=red>" + PlayerManager.Instance.actAttackNum + "</color> 点伤害。";
+        }
+        else
+        {
+            return "每隔 <color=red>" + triggerTime + "</color> 秒触发一次，每次对对方造成 <color=red>" + EnemyManager.Instance.currentEnemy.actAttackNum + "</color> 点伤害。";
+        }
     }
 }

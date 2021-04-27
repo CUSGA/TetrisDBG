@@ -50,7 +50,19 @@ public class SceneController : Singleton<SceneController>
         yield return null;
     }
 
-    //从战斗场景切换回地图场景的方法
+    //从其他场景进入商店场景的方法
+    public void TransitionToShopScene()
+    {
+        StartCoroutine(IETransitionToShopScene());
+    }
+
+    IEnumerator IETransitionToShopScene()
+    {
+        yield return SceneManager.LoadSceneAsync("ShopScene");
+        yield return null;
+    }
+
+    //从其他场景切换回地图场景的方法
     public void TransitionToMapScene()
     {
         StartCoroutine(IETransitionToMapScene());

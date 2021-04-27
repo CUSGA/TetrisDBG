@@ -10,8 +10,8 @@ public class DeckExplorer : MonoBehaviour
     [Tooltip("显示当前鼠标悬停方块数据的Tooltip")]
     public GameObject deckExplorerTooltip;
 
-    [Tooltip("存储所有方块的数组，注意顺序要跟编号一致")]
-    public GameObject[] arrDeckCube;
+    [Tooltip("DeckCube预制体")]
+    public GameObject deckCube;
 
     //根据PlayerManager中的数据更新显示
     private void OnEnable()
@@ -26,7 +26,8 @@ public class DeckExplorer : MonoBehaviour
         foreach (GameObject item in PlayerManager.Instance.tempDeck)
         {
             int n = item.GetComponent<Cube>().cubeData.cubeCode;
-            Instantiate(arrDeckCube[n], desktop);
+            DeckCube dc = Instantiate(deckCube, desktop).GetComponent<DeckCube>();
+            dc.SetCube(item);
         }
     }
 

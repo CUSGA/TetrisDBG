@@ -140,7 +140,7 @@ public class BattleManager : Singleton<BattleManager>
         EnemyManager.Instance.currentEnemy.BeAttack(effectAttack);
 
         //增加护盾（加护盾Buff）
-        PlayerManager.Instance.buffShield += effectShield;
+        PlayerManager.Instance.buffShield += Mathf.CeilToInt(effectShield * (10 + PlayerManager.Instance.buffShieldMultiply) * 0.1f);
 
         //玩家受到伤害
         PlayerManager.Instance.BeAttack(effectBeAttack);
