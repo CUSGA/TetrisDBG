@@ -4,31 +4,33 @@ using UnityEngine;
 
 public class DeckExplorer : MonoBehaviour
 {
-    [Tooltip("Õ¹Ê¾Ëù³ÖÓĞ·½¿éµÄÎ»ÖÃ")]
+    [Tooltip("å±•ç¤ºæ‰€æŒæœ‰æ–¹å—çš„ä½ç½®")]
     public Transform desktop;
 
-    [Tooltip("ÏÔÊ¾µ±Ç°Êó±êĞüÍ£·½¿éÊı¾İµÄTooltip")]
+    [Tooltip("æ˜¾ç¤ºå½“å‰é¼ æ ‡æ‚¬åœæ–¹å—æ•°æ®çš„Tooltip")]
     public GameObject deckExplorerTooltip;
 
-    [Tooltip("DeckCubeÔ¤ÖÆÌå")]
+    [Tooltip("DeckCubeé¢„åˆ¶ä½“")]
     public GameObject deckCube;
 
-    //¸ù¾İPlayerManagerÖĞµÄÊı¾İ¸üĞÂÏÔÊ¾
+    //æ ¹æ®PlayerManagerä¸­çš„æ•°æ®æ›´æ–°æ˜¾ç¤º
     private void OnEnable()
     {
-        //ÏÈÇå¿ÕDeskÏÂµÄËùÓĞ×ÓÎïÌå
-        for (int i = 0; i < desktop.childCount; i++)
+        //å…ˆæ¸…ç©ºDeskä¸‹çš„æ‰€æœ‰å­ç‰©ä½“
+        while(desktop.childCount > 0)
         {
-            Destroy(desktop.GetChild(i).gameObject);
+            DestroyImmediate(desktop.GetChild(0).gameObject);
+            Debug.Log("Destroy");
         }
 
-        //È»ºó´ÓPlayerManagerÖĞ¶ÁÈ¡Êı¾İ·ÅÖÃ·½¿é
+        //ç„¶åä»PlayerManagerä¸­è¯»å–æ•°æ®æ”¾ç½®æ–¹å—
         foreach (GameObject item in PlayerManager.Instance.tempDeck)
         {
             int n = item.GetComponent<Cube>().cubeData.cubeCode;
             DeckCube dc = Instantiate(deckCube, desktop).GetComponent<DeckCube>();
             dc.SetCube(item);
         }
+        MapUIManager.Instance.UpdateDeskTopHeight();
     }
 
     public void CloseExplorer()
