@@ -5,9 +5,9 @@ using UnityEngine;
 //这是最基础的攻击动作例子，说白了就是测试用的
 public class A_Attack : Act
 {
-    private void Start()
+    protected new void Start()
     {
-        //TODO: 所有者。所有的Act都要修改这里。
+        //所有者。所有的Act都要修改这里。
         //若所有者的攻击动作的初值大于零，就用该值覆盖默认值。
         if (belong == 0)
         {
@@ -23,7 +23,7 @@ public class A_Attack : Act
                 triggerTime = EnemyManager.Instance.currentEnemy.actAttackTime;
             }
         }
-        lastTriggerTime = triggerTime;
+        base.Start();
     }
 
     public override void TriggerAction()

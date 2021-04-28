@@ -17,7 +17,7 @@ public abstract class Cube : MonoBehaviour
         background = transform.parent.GetComponent<SpriteRenderer>();
     }
 
-    private void Start()
+    protected void Start()
     {
         SetData();
     }

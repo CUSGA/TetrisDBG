@@ -4910,6 +4910,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1961852731097144860, guid: 539946cdce4d55c49ae0f9905d752f54, type: 3}
+      propertyPath: enemyTest
+      value: 
+      objectReference: {fileID: 2682826066512667236, guid: 91d6d2031f2ea5c4a844251936277fce, type: 3}
     - target: {fileID: 1961852731097144861, guid: 539946cdce4d55c49ae0f9905d752f54, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -5158,15 +5162,31 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 635347336}
     - target: {fileID: 4786206628721208476, guid: eea821be840a00f4188b73309bbf61fe, type: 3}
+      propertyPath: AllActs.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786206628721208476, guid: eea821be840a00f4188b73309bbf61fe, type: 3}
       propertyPath: playerHealthSlider
       value: 
       objectReference: {fileID: 577445201}
     - target: {fileID: 4786206628721208476, guid: eea821be840a00f4188b73309bbf61fe, type: 3}
       propertyPath: AllBuffs.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4786206628721208476, guid: eea821be840a00f4188b73309bbf61fe, type: 3}
+      propertyPath: AllActs.Array.data[3]
+      value: 
+      objectReference: {fileID: 7606979611621722003, guid: 9ca250a84ce3e2d4390953b8c7f9dc96, type: 3}
+    - target: {fileID: 4786206628721208476, guid: eea821be840a00f4188b73309bbf61fe, type: 3}
+      propertyPath: AllActs.Array.data[4]
+      value: 
+      objectReference: {fileID: 8301845012449628324, guid: d4ef0cca03d21c54db492a843aa59909, type: 3}
+    - target: {fileID: 4786206628721208476, guid: eea821be840a00f4188b73309bbf61fe, type: 3}
       propertyPath: AllBuffs.Array.data[3]
+      value: 
+      objectReference: {fileID: 1687082998250381335, guid: 11bb662026934d94ca68251b99fd1462, type: 3}
+    - target: {fileID: 4786206628721208476, guid: eea821be840a00f4188b73309bbf61fe, type: 3}
+      propertyPath: AllBuffs.Array.data[4]
       value: 
       objectReference: {fileID: 1687082998250381335, guid: 11bb662026934d94ca68251b99fd1462, type: 3}
     - target: {fileID: 4786206628721208477, guid: eea821be840a00f4188b73309bbf61fe, type: 3}
@@ -5281,6 +5301,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7312137786798262307, guid: 04f45d05e8b54644cb8faca7d4e43d0e, type: 3}
+      propertyPath: Deck.Array.data[0]
+      value: 
+      objectReference: {fileID: 8989566570439505539, guid: 66948b6e721e1b540bf77b3c978cedb7, type: 3}
+    - target: {fileID: 7312137786798262307, guid: 04f45d05e8b54644cb8faca7d4e43d0e, type: 3}
+      propertyPath: Deck.Array.data[1]
+      value: 
+      objectReference: {fileID: 8989566570439505539, guid: d820fc108cf4d1d4dbf98b74660b66f7, type: 3}
+    - target: {fileID: 7312137786798262307, guid: 04f45d05e8b54644cb8faca7d4e43d0e, type: 3}
+      propertyPath: Deck.Array.data[2]
+      value: 
+      objectReference: {fileID: 6917729031394828760, guid: 14fa08e4cde72da4ba108899851f019a, type: 3}
     - target: {fileID: 7312137786798262332, guid: 04f45d05e8b54644cb8faca7d4e43d0e, type: 3}
       propertyPath: m_Name
       value: PlayerManager

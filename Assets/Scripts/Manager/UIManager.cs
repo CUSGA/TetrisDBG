@@ -280,6 +280,48 @@ public class UIManager : Singleton<UIManager>
             if (actObj != null)
                 Destroy(actObj.gameObject);
         }
+
+        if (EnemyManager.Instance.currentEnemy.actTroubleMakerKingNum > 0)//修改
+        {
+            Transform actObj = FindBuffObjectFromHolder(3, "Act_TroubleMakerKing");//修改
+            if (actObj != null)
+            {
+                actObj.GetComponent<Act>().numText.text = EnemyManager.Instance.currentEnemy.actTroubleMakerKingNum.ToString();//修改
+            }
+            else
+            {
+                Act b = Instantiate(AllActs[3], enemyActHolder.transform).GetComponent<Act>();//修改
+                b.numText.text = EnemyManager.Instance.currentEnemy.actTroubleMakerKingNum.ToString();//修改
+                b.belong = 1;
+            }
+        }
+        else
+        {
+            Transform actObj = FindBuffObjectFromHolder(3, "Act_TroubleMakerKing");//修改
+            if (actObj != null)
+                Destroy(actObj.gameObject);
+        }
+
+        if (EnemyManager.Instance.currentEnemy.actTroubleIncreaseNum > 0)//修改
+        {
+            Transform actObj = FindBuffObjectFromHolder(3, "Act_TroubleIncrease");//修改
+            if (actObj != null)
+            {
+                actObj.GetComponent<Act>().numText.text = EnemyManager.Instance.currentEnemy.actTroubleIncreaseNum.ToString();//修改
+            }
+            else
+            {
+                Act b = Instantiate(AllActs[4], enemyActHolder.transform).GetComponent<Act>();//修改
+                b.numText.text = EnemyManager.Instance.currentEnemy.actTroubleIncreaseNum.ToString();//修改
+                b.belong = 1;
+            }
+        }
+        else
+        {
+            Transform actObj = FindBuffObjectFromHolder(3, "Act_TroubleIncrease");//修改
+            if (actObj != null)
+                Destroy(actObj.gameObject);
+        }
     }
 
     /// <summary>

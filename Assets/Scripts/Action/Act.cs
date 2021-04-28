@@ -26,7 +26,7 @@ public abstract class Act : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     [Tooltip("记录该Buff的归属。0代表玩家，1代表敌人。")]
     public int belong;//该Buff的持有者，是敌人还是玩家
 
-    private void Start()
+    protected void Start()
     {
         lastTriggerTime = triggerTime;
     }

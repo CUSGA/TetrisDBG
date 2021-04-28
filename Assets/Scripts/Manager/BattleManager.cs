@@ -20,6 +20,9 @@ public class BattleManager : Singleton<BattleManager>
     //用来存储所有方块位置的二维数组。
     public Transform[,] grid = new Transform[width, height];
 
+    //所有实现了ILineClearObserver接口的，也即在有行被消除时会执行的Cube
+    List<ILineClearObserver> lineClearObserver = new List<ILineClearObserver>();
+
     #region 消除行时的总的触发效果计数器：TotalEffectCounter
 
     public int effectAttack = 0;
@@ -82,6 +85,7 @@ public class BattleManager : Singleton<BattleManager>
                 cleanCombo += 1;//连击数+1
                 TriggerLine(i);
                 DeleteLine(i);
+                TriggerLineClearObserver();
                 yield return new WaitForSeconds(waitTime);
                 RowDown(i);
                 AllDown();
@@ -171,6 +175,33 @@ public class BattleManager : Singleton<BattleManager>
     }
 
     /// <summary>
+    /// 触发所有注册进来的，要在有行被消除时调用的方法
+    /// </summary>
+    private void TriggerLineClearObserver()
+    {
+        bool isLC = false;
+        foreach (var observer in lineClearObserver)
+        {
+            observer.LineClearNotify();
+            isLC = true;
+        }
+
+        if (isLC)
+        {
+            //TODO: 显示文字告知该行效果
+            Debug.Log("行消除触发效果：攻击：" + effectAttack + "，护盾：" + effectShield + "，受到伤害：" + effectBeAttack);
+
+            HandleEffect();
+
+            //让UIManager更新显示
+            UIManager.Instance.UpdateUI();
+
+            //清空效果计数器
+            CleanEffectCounter();
+        }
+    }
+
+    /// <summary>
     /// 把第i行上面的全部行都往下移一行
     /// </summary>
     /// <param name="i"></param>
@@ -249,5 +280,15 @@ public class BattleManager : Singleton<BattleManager>
         {
             tet.downCheck = false;
         }
+    }
+
+    public void AddLineClearObserver(ILineClearObserver observer)
+    {
+        lineClearObserver.Add(observer);
+    }
+
+    public void RemoveLineClearObserver(ILineClearObserver observer)
+    {
+        lineClearObserver.Remove(observer);
     }
 }
