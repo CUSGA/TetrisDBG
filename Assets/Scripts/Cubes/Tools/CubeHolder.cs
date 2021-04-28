@@ -15,4 +15,14 @@ public class CubeHolder : MonoBehaviour
     {
         cube = Instantiate(c, transform).GetComponent<Cube>();
     }
+
+    /// <summary>
+    /// 将该Holder身上的Cube换成其他Cube
+    /// </summary>
+    /// <param name="c">你要换的Cube</param>
+    public void ChangeCube(GameObject c)
+    {
+        Destroy(transform.GetChild(0).gameObject);
+        cube = Instantiate(c, transform).GetComponent<Cube>();
+    }
 }

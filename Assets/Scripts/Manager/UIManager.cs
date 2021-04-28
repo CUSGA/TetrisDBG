@@ -193,17 +193,17 @@ public class UIManager : Singleton<UIManager>
 
     private void UpdateEnemyBuffUI()
     {
-        if (EnemyManager.Instance.currentEnemy.buffShield > 0)
+        if (EnemyManager.Instance.currentEnemy.buffShieldNum > 0)
         {
             Transform buffObj = FindBuffObjectFromHolder(1, "Buff_Shield");
             if (buffObj != null)//若找到，也就是说当前已经有生成该buff物体，就更改它的显示数字
             {
-                buffObj.GetComponent<Buff>().numText.text = EnemyManager.Instance.currentEnemy.buffShield.ToString();
+                buffObj.GetComponent<Buff>().numText.text = EnemyManager.Instance.currentEnemy.buffShieldNum.ToString();
             }
             else//若没有找到，也就是说当前没有生成该buff物体，就生成一个并赋值修改显示数字
             {
                 Buff b = Instantiate(AllBuffs[0], enemyBuffHolder.transform).GetComponent<Buff>();
-                b.numText.text = EnemyManager.Instance.currentEnemy.buffShield.ToString();
+                b.numText.text = EnemyManager.Instance.currentEnemy.buffShieldNum.ToString();
                 b.belong = 1;
             }
         }
@@ -211,6 +211,28 @@ public class UIManager : Singleton<UIManager>
         {
             //遍历查询playerBuffHolder下是否已经有Shield的Buff标志
             Transform buffObj = FindBuffObjectFromHolder(1, "Buff_Shield");
+            if (buffObj != null)
+                Destroy(buffObj.gameObject);
+        }
+
+        if (EnemyManager.Instance.currentEnemy.buffPoisonNum > 0)
+        {
+            Transform buffObj = FindBuffObjectFromHolder(1, "Buff_Poison");
+            if (buffObj != null)//若找到，也就是说当前已经有生成该buff物体，就更改它的显示数字
+            {
+                buffObj.GetComponent<Buff>().numText.text = EnemyManager.Instance.currentEnemy.buffPoisonNum.ToString();
+            }
+            else//若没有找到，也就是说当前没有生成该buff物体，就生成一个并赋值修改显示数字
+            {
+                Buff b = Instantiate(AllBuffs[4], enemyBuffHolder.transform).GetComponent<Buff>();
+                b.numText.text = EnemyManager.Instance.currentEnemy.buffPoisonNum.ToString();
+                b.belong = 1;
+            }
+        }
+        else//若buff数字小于等于0，就把当前有的buff物体删除掉
+        {
+            //遍历查询playerBuffHolder下是否已经有Shield的Buff标志
+            Transform buffObj = FindBuffObjectFromHolder(1, "Buff_Poison");
             if (buffObj != null)
                 Destroy(buffObj.gameObject);
         }
@@ -322,6 +344,7 @@ public class UIManager : Singleton<UIManager>
             if (actObj != null)
                 Destroy(actObj.gameObject);
         }
+
     }
 
     /// <summary>

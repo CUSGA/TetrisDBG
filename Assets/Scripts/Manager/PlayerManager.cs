@@ -70,9 +70,8 @@ public class PlayerManager : Singleton<PlayerManager>
             currentHealth -= rdmg;
             if (currentHealth <= 0)
             {
-                //TODO: GAME OVER
                 currentHealth = 0;
-                Debug.LogWarning("GAME OVER");
+                BattleManager.Instance.GameOver();
             }
         }
 

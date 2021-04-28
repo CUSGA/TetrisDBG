@@ -31,8 +31,7 @@ public class C_Bell : Cube
                     continue;
                 }
                 
-                //BREAKPOINT: 检测当前检测的这块Cube是不是Bell，若不是才触发它的效果。
-                if (BattleManager.Instance.grid[ffX, ffY] != null && BattleManager.Instance.grid[ffX, ffY].GetComponent<CubeHolder>().cube.name != "Cube_Bell(Clone)")
+                if (BattleManager.Instance.grid[ffX, ffY] != null && BattleManager.Instance.grid[ffX, ffY].GetComponent<CubeHolder>().cube.cubeData.cubeEnName != "Bell")
                 {
                     BattleManager.Instance.grid[ffX, ffY].GetComponent<CubeHolder>().cube.ClearAction();
                     Debug.Log("坐标为（" + ffX + ", " + ffY + ")的" + BattleManager.Instance.grid[ffX, ffY].GetComponent<CubeHolder>().cube.name + "触发效果");

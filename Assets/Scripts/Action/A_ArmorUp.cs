@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class A_ArmorUp : Act
 {
-    private void Start()
+    protected new void Start()
     {
         if (EnemyManager.Instance.currentEnemy.actArmorUpTime > 0)
         {
             triggerTime = EnemyManager.Instance.currentEnemy.actArmorUpTime;
         }
-        lastTriggerTime = triggerTime;
+        base.Start();
     }
 
     //每次触发，所有者护盾+层数。
@@ -23,7 +23,7 @@ public class A_ArmorUp : Act
         }else if (belong == 1)
         {
             Debug.LogWarning("增加敌人的防御" + EnemyManager.Instance.currentEnemy.actArmorUpNum);
-            EnemyManager.Instance.currentEnemy.buffShield += EnemyManager.Instance.currentEnemy.actArmorUpNum;
+            EnemyManager.Instance.currentEnemy.buffShieldNum += EnemyManager.Instance.currentEnemy.actArmorUpNum;
         }
         else
         {

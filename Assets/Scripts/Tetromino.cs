@@ -39,7 +39,7 @@ public class Tetromino : MonoBehaviour
 
     void Update()
     {
-        if (moveAble)
+        if (moveAble && !BattleManager.Instance.isGameOver)
         {
             //检测按键并移动方块组合
             if (Input.GetKeyDown(KeyCode.LeftArrow))
@@ -90,7 +90,7 @@ public class Tetromino : MonoBehaviour
     /// 循环遍历方块组中每个方块是否都在允许移动的范围内
     /// </summary>
     /// <returns></returns>
-    bool ValidMove()
+    public bool ValidMove()
     {
         foreach (Transform children in transform)
         {
@@ -102,14 +102,14 @@ public class Tetromino : MonoBehaviour
                 //检查是否出界
                 if (roundedX < 0 || roundedX >= BattleManager.width || roundedY < 0 || roundedY >= BattleManager.height)
                 {
-                    //DEBUG: Debug.Log("因为出界而无法移动");
+                    Debug.Log("因为出界而无法移动");
                     return false;
                 }
 
                 //检查是否和其他已经放好的方块重叠。
                 if (BattleManager.Instance.grid[roundedX, roundedY] != null)
                 {
-                    //DEBUG: Debug.Log("因为碰到其他方块而无法移动：" + GameManager.Instance.grid[roundedX, roundedY] + "其父类是：" + GameManager.Instance.grid[roundedX, roundedY].parent.name);
+                    Debug.Log("因为碰到其他方块而无法移动：" + BattleManager.Instance.grid[roundedX, roundedY] + "其父类是：" + BattleManager.Instance.grid[roundedX, roundedY].parent.name);
                     return false;
                 }
             }

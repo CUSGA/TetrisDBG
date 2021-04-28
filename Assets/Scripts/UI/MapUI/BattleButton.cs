@@ -18,4 +18,9 @@ public class BattleButton : MonoBehaviour
     {
         SceneController.Instance.TransitionToBattleScene(StageManager.Instance.AllStage[1]);
     }
+
+    public void TransToTroubleMakerKingBattle()
+    {
+        SceneController.Instance.TransitionToBattleScene(StageManager.Instance.AllStage[2]);
+    }
 }

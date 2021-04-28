@@ -36,6 +36,8 @@ public class BattleManager : Singleton<BattleManager>
 
     float waitTime = 0.5f;//每次删除行之类的停顿时间
 
+    public bool isGameOver = false;//游戏是否结束
+
     void Start()
     {
         CreateNewTetromino();
@@ -46,21 +48,29 @@ public class BattleManager : Singleton<BattleManager>
     /// </summary>
     public void CreateNewTetromino()
     {
-        //随机在卡组中抽取一个Cube
-        int n = Mathf.FloorToInt(Random.Range(0f, PlayerManager.Instance.tempDeck.Count));
-        GameObject nCube = PlayerManager.Instance.tempDeck[n];
-        //在该Cube的可生成方块组合中随机抽一个
-        int m = Mathf.FloorToInt(Random.Range(0f, nCube.GetComponent<Cube>().cubeData.ableTet.Length));
-        m = nCube.GetComponent<Cube>().cubeData.ableTet[m];//抽到的方块组合的编号
-
-        GameObject tet = Instantiate(Tetrominoes[m], spawner.position, Quaternion.identity);
-
-        //在生成的方块组合下的每个Holder下都生成一个Cube。
-        foreach (Transform children in tet.transform)
+        if (!isGameOver)
         {
-            if (children.name != "RotatePoint")
+            //随机在卡组中抽取一个Cube
+            int n = Mathf.FloorToInt(Random.Range(0f, PlayerManager.Instance.tempDeck.Count));
+            GameObject nCube = PlayerManager.Instance.tempDeck[n];
+            //在该Cube的可生成方块组合中随机抽一个
+            int m = Mathf.FloorToInt(Random.Range(0f, nCube.GetComponent<Cube>().cubeData.ableTet.Length));
+            m = nCube.GetComponent<Cube>().cubeData.ableTet[m];//抽到的方块组合的编号
+
+            GameObject tet = Instantiate(Tetrominoes[m], spawner.position, Quaternion.identity);
+            //检测在生成时是不是已经跟其他方块重叠，也就是方块已经垒到顶上了。
+            if (!tet.GetComponent<Tetromino>().ValidMove())
             {
-                children.GetComponent<CubeHolder>().SetCube(nCube);
+                GameOver();
+            }
+
+            //在生成的方块组合下的每个Holder下都生成一个Cube。
+            foreach (Transform children in tet.transform)
+            {
+                if (children.name != "RotatePoint")
+                {
+                    children.GetComponent<CubeHolder>().SetCube(nCube);
+                }
             }
         }
     }
@@ -280,6 +290,15 @@ public class BattleManager : Singleton<BattleManager>
         {
             tet.downCheck = false;
         }
+    }
+
+    /// <summary>
+    /// 游戏结束~~
+    /// </summary>
+    public void GameOver()
+    {
+        isGameOver = true;
+        Debug.LogError("GAME OVER");
     }
 
     public void AddLineClearObserver(ILineClearObserver observer)

@@ -83,6 +83,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy_BomberAirShip.cs" />
+    <Compile Include="Assets\Scripts\Action\A_TroubleIncrease.cs" />
     <Compile Include="Assets\Scripts\Manager\StageManager.cs" />
     <Compile Include="Assets\Scripts\Manager\ShopUIManager.cs" />
     <Compile Include="Assets\Scripts\UI\BattleSceneUI\BackToMapButton.cs" />
@@ -103,6 +104,7 @@
     <Compile Include="Assets\Scripts\Buff\B_ShieldMultiply.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
+    <Compile Include="Assets\Scripts\Action\A_TroubleMakerKing.cs" />
     <Compile Include="Assets\Scripts\UI\DE_Tooltip.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\Scripts\UI\Tooltip.cs" />
@@ -121,6 +123,8 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\Scripts\Shop\GoodHolder.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Enemy_TroubleMakerKing.cs" />
+    <Compile Include="Assets\Scripts\Cubes\C_TroubleMaker.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
@@ -129,6 +133,7 @@
     <Compile Include="Assets\Scripts\Tool\Singleton.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
+    <Compile Include="Assets\Scripts\Cubes\Tools\ILineClearObserver.cs" />
     <Compile Include="Assets\Scripts\Cubes\C_Attack.cs" />
     <Compile Include="Assets\Scripts\Buff\B_ShieldMultiplyChip.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
@@ -136,11 +141,10 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\Cubes\Cube.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
-    <Compile Include="Assets\Scripts\Cubes\C_TroubleMaker.cs" />
-    <Compile Include="Assets\Scripts\Cubes\Tools\ILineClearObserver.cs" />
-    <Compile Include="Assets\Scripts\Action\A_TroubleMakerKing.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Enemy_TroubleMakerKing.cs" />
-    <Compile Include="Assets\Scripts\Action\A_TroubleIncrease.cs" />
+    <Compile Include="Assets\Scripts\Buff\B_Poison.cs" />
+    <Compile Include="Assets\Scripts\Cubes\C_PoisonBottle.cs" />
+    <Compile Include="Assets\Scripts\Cubes\C_SpreadPoison.cs" />
+    <Compile Include="Assets\Scripts\Stage\Stage_TroubleMakerKing.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -16,7 +16,9 @@ public class Enemy : MonoBehaviour
     [Header("当前的Buff列表。检视用，不用修改。")]
     #region Buff列表，BuffList
 
-    public int buffShield = 0;
+    public int buffShieldNum = 0;
+
+    public int buffPoisonNum = 0;
 
     #endregion
 
@@ -51,14 +53,14 @@ public class Enemy : MonoBehaviour
     public void BeAttack(int dmg)
     {
         Debug.Log("敌人受到攻击：" + dmg + "点");
-        if (dmg <= buffShield)
+        if (dmg <= buffShieldNum)
         {
-            buffShield -= dmg;
+            buffShieldNum -= dmg;
         }
         else
         {
-            int rdmg = dmg - buffShield;
-            buffShield = 0;
+            int rdmg = dmg - buffShieldNum;
+            buffShieldNum = 0;
             currentHealth -= rdmg;
             if (currentHealth <= 0)
             {

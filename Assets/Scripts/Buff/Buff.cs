@@ -34,7 +34,8 @@ public abstract class Buff : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     private void Update()
     {
-        Trigger();//判断定时性Buff并计时、触发效果、更改显示等
+        if (!BattleManager.Instance.isGameOver)
+            Trigger();//判断定时性Buff并计时、触发效果、更改显示等
     }
 
     public void Trigger()

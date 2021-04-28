@@ -13,8 +13,8 @@ public class B_Shield : Buff
             int i = PlayerManager.Instance.buffShield;
         }else if (belong == 1)
         {
-            EnemyManager.Instance.currentEnemy.buffShield -= 1;
-            int i = EnemyManager.Instance.currentEnemy.buffShield;
+            EnemyManager.Instance.currentEnemy.buffShieldNum -= 1;
+            int i = EnemyManager.Instance.currentEnemy.buffShieldNum;
         }else
         {
             Debug.LogError("ÄãBuffµÄ¹éÊô¸ã´íÁË");
