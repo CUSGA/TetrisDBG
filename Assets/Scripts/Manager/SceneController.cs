@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-//ÒòÎªSceneManagerÊÇunity×Ô´øµÄÀà£¬ËùÒÔÖ»ÄÜ¸ÄÃû
+//å› ä¸ºSceneManageræ˜¯unityè‡ªå¸¦çš„ç±»ï¼Œæ‰€ä»¥åªèƒ½æ”¹å
 public class SceneController : Singleton<SceneController>
 {
-    //²âÊÔÓÃ£¡£¡£¡
+    //æµ‹è¯•ç”¨ï¼ï¼ï¼
     public GameObject enemyPrefab;
 
     public void GoToBattle()
@@ -21,22 +21,22 @@ public class SceneController : Singleton<SceneController>
     }
 
     /// <summary>
-    /// ¼ÓÔØ½øÈëÒ»¸öËæ»ú¹Ø¿¨¡£
+    /// åŠ è½½è¿›å…¥ä¸€ä¸ªéšæœºå…³å¡ã€‚
     /// </summary>
     public void TransitionToRandomStage()
     {
-        //´ÓStageManagerËù´¢´æµÄËùÓĞ¹Ø¿¨ÖĞËæ»ú³éÒ»¸ö½øÈë£¨Ä¿Ç°Ö»ÓĞÒ»¸ö¹Ø¿¨ËùÒÔÖ»ÄÜ½øÈëÕâÒ»¹Ø£©
+        //ä»StageManageræ‰€å‚¨å­˜çš„æ‰€æœ‰å…³å¡ä¸­éšæœºæŠ½ä¸€ä¸ªè¿›å…¥ï¼ˆç›®å‰åªæœ‰ä¸€ä¸ªå…³å¡æ‰€ä»¥åªèƒ½è¿›å…¥è¿™ä¸€å…³ï¼‰
         int n = Mathf.FloorToInt(Random.Range(0f, StageManager.Instance.AllStage.Length));
         TransitionToBattleScene(StageManager.Instance.AllStage[n]);
     }
 
     /// <summary>
-    /// ½øÈëÕ½¶·³¡¾°£¬Èç¹ûÒªÖ¸ÏòĞÔ½øÈëÄ³¸ö¹Ø¿¨¾ÍÖ±½Óµ÷ÓÃÕâ¸ö¡£
+    /// è¿›å…¥æˆ˜æ–—åœºæ™¯ï¼Œå¦‚æœè¦æŒ‡å‘æ€§è¿›å…¥æŸä¸ªå…³å¡å°±ç›´æ¥è°ƒç”¨è¿™ä¸ªã€‚
     /// </summary>
-    /// <param name="stage">Ëù½øÈëµÄÕ½¶·µÄÔ¤ÖÆÌå</param>
+    /// <param name="stage">æ‰€è¿›å…¥çš„æˆ˜æ–—çš„é¢„åˆ¶ä½“</param>
     public void TransitionToBattleScene(GameObject stage)
     {
-        Debug.Log("¿ªÊ¼¼ÓÔØ³¡¾°");
+        Debug.Log("å¼€å§‹åŠ è½½åœºæ™¯");
         StartCoroutine(IETransitionToBattleScene(stage.GetComponent<Stage>().enemy));
         stage.GetComponent<Stage>().StageAbility();
         PlayerManager.Instance.ResetTempDeck();
@@ -44,13 +44,13 @@ public class SceneController : Singleton<SceneController>
 
     IEnumerator IETransitionToBattleScene(GameObject stage)
     {
-        //TODO: ¼ÇµÃÕâÀï£¬ÇĞ»»³¡¾°Ê±¸ÄÃû
+        //TODO: è®°å¾—è¿™é‡Œï¼Œåˆ‡æ¢åœºæ™¯æ—¶æ”¹å
         yield return SceneManager.LoadSceneAsync("Scene1");
         EnemyManager.Instance.SetEnemy(stage);
         yield return null;
     }
 
-    //´ÓÆäËû³¡¾°½øÈëÉÌµê³¡¾°µÄ·½·¨
+    //ä»å…¶ä»–åœºæ™¯è¿›å…¥å•†åº—åœºæ™¯çš„æ–¹æ³•
     public void TransitionToShopScene()
     {
         StartCoroutine(IETransitionToShopScene());
@@ -62,7 +62,7 @@ public class SceneController : Singleton<SceneController>
         yield return null;
     }
 
-    //´ÓÆäËû³¡¾°ÇĞ»»»ØµØÍ¼³¡¾°µÄ·½·¨
+    //ä»å…¶ä»–åœºæ™¯åˆ‡æ¢å›åœ°å›¾åœºæ™¯çš„æ–¹æ³•
     public void TransitionToMapScene()
     {
         StartCoroutine(IETransitionToMapScene());
@@ -72,6 +72,19 @@ public class SceneController : Singleton<SceneController>
     IEnumerator IETransitionToMapScene()
     {
         yield return SceneManager.LoadSceneAsync("MapScene_Test");
+        PlayerManager.Instance.ResetState();
+        yield return null;
+    }
+    
+    public void TransitionToHomeScene()
+    {
+        StartCoroutine(IETransitionToHomeScene());
+        PlayerManager.Instance.ResetTempDeck();
+    }
+
+    IEnumerator IETransitionToHomeScene()
+    {
+        yield return SceneManager.LoadSceneAsync("Home");
         PlayerManager.Instance.ResetState();
         yield return null;
     }
