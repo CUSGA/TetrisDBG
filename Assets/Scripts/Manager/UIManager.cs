@@ -29,6 +29,10 @@ public class UIManager : Singleton<UIManager>
     [Header("别的")]
     public Tooltip tooltip;
     public GameObject deckExplorer;
+    public GameObject winBackground;
+    public GameObject loseBackground;
+    public float winTime = 2f;
+    public float loseTime = 2f;
     
     private float originalSize1;
     private float originalSize2;
