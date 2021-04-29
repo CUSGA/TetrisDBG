@@ -298,7 +298,7 @@ public class BattleManager : Singleton<BattleManager>
     public void GameOver()
     {
         isGameOver = true;
-        Debug.LogError("GAME OVER");
+        Debug.LogWarning("GAME OVER");
     }
 
     public void AddLineClearObserver(ILineClearObserver observer)

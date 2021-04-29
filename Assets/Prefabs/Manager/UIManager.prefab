@@ -63,5 +63,11 @@ MonoBehaviour:
   - {fileID: 5033740491804421688, guid: 2f31b055f0e29514ea40025739bfd6d7, type: 3}
   - {fileID: 7606979611621722003, guid: 9ca250a84ce3e2d4390953b8c7f9dc96, type: 3}
   - {fileID: 8301845012449628324, guid: d4ef0cca03d21c54db492a843aa59909, type: 3}
+  - {fileID: 3809261310768741051, guid: efd3790354de2bc419a3b028bc50f758, type: 3}
   tooltip: {fileID: 0}
   deckExplorer: {fileID: 0}
+  winBackground: {fileID: 0}
+  loseBackground: {fileID: 0}
+  finalBackground: {fileID: 0}
+  winTime: 2
+  loseTime: 2

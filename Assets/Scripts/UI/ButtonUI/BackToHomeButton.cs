@@ -6,6 +6,7 @@ public class BackToHomeButton : MonoBehaviour
 {
     public void TransToHome()
     {
+        BattleManager.Instance.isGameOver = false;
         SceneController.Instance.TransitionToHomeScene();
     }
 }

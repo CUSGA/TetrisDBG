@@ -55,7 +55,10 @@ MonoBehaviour:
   - {fileID: 4318298124026020710, guid: 3b4186b69727ce24689eb7904aa229cc, type: 3}
   - {fileID: 6158417751268843301, guid: a361f8e0122e84c4eb4fd0400f27c5d6, type: 3}
   - {fileID: 6178274921219507933, guid: e86d50f64bf64804db781bd705cde6c7, type: 3}
+  - {fileID: 2756087759230177991, guid: d0a0d64b088e4aa4f8b5e7b9a79a327b, type: 3}
+  - {fileID: 2729922351355433442, guid: c76d976258edd4f49940bb4df52d9707, type: 3}
   spawner: {fileID: 0}
   effectAttack: 0
   effectShield: 0
   effectBeAttack: 0
+  isGameOver: 0

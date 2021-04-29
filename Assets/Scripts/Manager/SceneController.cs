@@ -54,18 +54,19 @@ public class SceneController : Singleton<SceneController>
         Debug.Log("开始加载场景");
         switch(level)
         {
-            case 1: StartCoroutine(IETransitionToBattleScene(stage.GetComponent<Stage>().enemy_LV1));break;
-            case 2: StartCoroutine(IETransitionToBattleScene(stage.GetComponent<Stage>().enemy_LV2));break;
-            case 3: StartCoroutine(IETransitionToBattleScene(stage.GetComponent<Stage>().enemy_LV3));break;
+            case 1: StartCoroutine(IETransitionToBattleScene(stage.GetComponent<Stage>().enemy_LV1)); Debug.LogWarning("加载LV1"); break;
+            case 2: StartCoroutine(IETransitionToBattleScene(stage.GetComponent<Stage>().enemy_LV2)); Debug.LogWarning("加载LV2" + stage.GetComponent<Stage>().enemy_LV2.name); break;
+            case 3: StartCoroutine(IETransitionToBattleScene(stage.GetComponent<Stage>().enemy_LV3)); Debug.LogWarning("加载LV3"); break;
         }
         stage.GetComponent<Stage>().StageAbility();
         PlayerManager.Instance.ResetTempDeck();
     }
 
-    IEnumerator IETransitionToBattleScene(GameObject stage)
+    IEnumerator IETransitionToBattleScene(GameObject enemy)
     {
+        Debug.LogWarning("协程：" + enemy.name);
         yield return SceneManager.LoadSceneAsync("Scene1");
-        EnemyManager.Instance.SetEnemy(stage);
+        EnemyManager.Instance.SetEnemy(enemy);
         yield return null;
     }
 

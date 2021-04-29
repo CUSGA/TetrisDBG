@@ -11,13 +11,15 @@ public class C_LittleDemon : Cube
     protected new void Start()
     {
         base.Start();
-        EnemyManager.Instance.currentEnemy.actAttackNum += 1;
+        if (EnemyManager.Instance.currentEnemy != null)
+            EnemyManager.Instance.currentEnemy.actAttackNum += 1;
         UIManager.Instance.UpdateUI();
     }
 
     private void OnDisable()
     {
-        EnemyManager.Instance.currentEnemy.actAttackNum -= 1;
+        if (EnemyManager.Instance.currentEnemy != null)
+            EnemyManager.Instance.currentEnemy.actAttackNum -= 1;
         UIManager.Instance.UpdateUI();
     }
 }

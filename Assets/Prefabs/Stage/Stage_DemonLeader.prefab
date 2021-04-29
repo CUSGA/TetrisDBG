@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2882346291036547921
+--- !u!1 &5869228382505927056
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,56 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6688781711062681727}
-  - component: {fileID: 715105702339944947}
+  - component: {fileID: 7290422180525751237}
+  - component: {fileID: 3244069999314190474}
   m_Layer: 0
-  m_Name: Enemy_BomberAirShip
+  m_Name: Stage_DemonLeader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6688781711062681727
+--- !u!4 &7290422180525751237
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2882346291036547921}
+  m_GameObject: {fileID: 5869228382505927056}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 1, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &715105702339944947
+--- !u!114 &3244069999314190474
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2882346291036547921}
+  m_GameObject: {fileID: 5869228382505927056}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31c6ed5d969bbd54397c8337a091e275, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c697e0cf504a38449c8947ddfa9e47a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  img: {fileID: 0}
-  enemyName: "\u7A7A\u88AD\u98DE\u8247"
-  maxHealth: 15
-  currentHealth: 0
-  buffShieldNum: 0
-  buffPoisonNum: 0
-  actAttackNum: 0
-  actAttackTime: 0
-  actArmorUpNum: 0
-  actArmorUpTime: 0
-  actAirRaidNum: 0
-  actAirRaidTime: 0
-  actTroubleMakerKingNum: 0
-  actTroubleIncreaseNum: 0
-  actCallOfDemonNum: 0
-  actCallOfDemonTime: 0
-  actAirRaidNum_I: 1
-  actAirRaidTime_I: 15
+  enemy_LV1: {fileID: 6007262376017262266, guid: 5119a30ed0fea2a41b70e5f5528691f6, type: 3}
+  enemy_LV2: {fileID: 7003277626086637623, guid: 5404f78cdc40d5d48b90800132e1562f, type: 3}
+  enemy_LV3: {fileID: 8580087806350087981, guid: 8eaca6cefd83a7b40959160c8f42b9e4, type: 3}

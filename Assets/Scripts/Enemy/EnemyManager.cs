@@ -16,7 +16,7 @@ public class EnemyManager : Singleton<EnemyManager>
     private void Start()
     {
         //TODO: 为了方便所以不通过Stage直接生成，实际游戏中应该删去这个。
-        SetEnemy(enemyTest);
+        //SetEnemy(enemyTest);
     }
 
     /// <summary>
@@ -27,6 +27,7 @@ public class EnemyManager : Singleton<EnemyManager>
         if (enemyPoint.childCount > 0)
         {
             Debug.LogWarning("尝试新生成enemy时当前场景中已有enemy，进行覆盖");
+            Debug.LogWarning("新生成的Enemy: " + enemy.name);
             foreach (Transform item in enemyPoint)
             {
                 Destroy(item.gameObject);

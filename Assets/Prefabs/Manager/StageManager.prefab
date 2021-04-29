@@ -45,3 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AllStage:
   - {fileID: 6873303587523869119, guid: d19b4ffc89fcbae4baf1a861b00e2b14, type: 3}
+  - {fileID: 401673315460056260, guid: c1428ee9b730c7e42af25041099061f4, type: 3}
+  - {fileID: 5869228382505927056, guid: c26048305d0827a4c8bf4ae67bef74c1, type: 3}
+  - {fileID: 3163011564952349344, guid: f34bf925d9774754ebce098e73cae614, type: 3}

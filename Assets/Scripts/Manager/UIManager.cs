@@ -31,6 +31,7 @@ public class UIManager : Singleton<UIManager>
     public GameObject deckExplorer;
     public GameObject winBackground;
     public GameObject loseBackground;
+    public GameObject finalBackground;
     public float winTime = 2f;
     public float loseTime = 2f;
     
@@ -435,14 +436,15 @@ public class UIManager : Singleton<UIManager>
     
     public void Win()
     {
-        if (MapUIManager.Instance.curLevel <= 10)
+        BattleManager.Instance.GameOver();
+        if (PlayerManager.Instance.curLevel <= 15)
         {
-            MapUIManager.Instance.curLevel += 1;
+            PlayerManager.Instance.curLevel += 1;
             StartCoroutine(IEWin());
         }
         else
         {
-            MapUIManager.Instance.curLevel = 0;
+            PlayerManager.Instance.curLevel = 0;
             StartCoroutine(IEFinal());
         }
     }
@@ -477,7 +479,8 @@ public class UIManager : Singleton<UIManager>
 
     public void Lose()
     {
-        MapUIManager.Instance.curLevel = 0;
+        BattleManager.Instance.GameOver();
+        PlayerManager.Instance.curLevel = 0;
         StartCoroutine(IELose());
     }
 
