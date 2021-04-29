@@ -34,5 +34,17 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public static bool IsExist()
+    {
+        if (_instance == null)
+        {
+            if (FindObjectOfType<T>(true))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
 }
 

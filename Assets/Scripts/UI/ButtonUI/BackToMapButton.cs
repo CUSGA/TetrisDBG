@@ -6,7 +6,7 @@ public class BackToMapButton : MonoBehaviour
 {
     public void BackToMap()
     {
-        BattleManager.Instance.isGameOver = false;
+        //BattleManager.Instance.isGameOver = false;
         SceneController.Instance.TransitionToMapScene();
     }
 
@@ -14,5 +14,10 @@ public class BackToMapButton : MonoBehaviour
     {
         SceneController.Instance.TransitionToMapScene();
         PlayerManager.Instance.curLevel += 1;
+    }
+
+    public void FromHomeGoToMap()
+    {
+        SceneController.Instance.TransitionToMapScene();
     }
 }

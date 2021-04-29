@@ -61,6 +61,7 @@ public class BattleManager : Singleton<BattleManager>
             //检测在生成时是不是已经跟其他方块重叠，也就是方块已经垒到顶上了。
             if (!tet.GetComponent<Tetromino>().ValidMove())
             {
+                UIManager.Instance.Lose();
                 GameOver();
             }
 

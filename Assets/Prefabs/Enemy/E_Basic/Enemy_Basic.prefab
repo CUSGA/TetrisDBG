@@ -61,5 +61,5 @@ MonoBehaviour:
   actCallOfDemonTime: 0
   actAttackNum_I: 5
   actAttackTime_I: 0
-  actArmorUpNum_I: 1
+  actArmorUpNum_I: 5
   actArmorUpTime_I: 0

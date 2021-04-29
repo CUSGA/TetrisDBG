@@ -12,7 +12,8 @@ public class A_TroubleMakerKing : Act, ILineClearObserver
 
     private void OnDisable()
     {
-        BattleManager.Instance.RemoveLineClearObserver(this);
+        if (!BattleManager.Instance.isGameOver)
+            BattleManager.Instance.RemoveLineClearObserver(this);
     }
 
     public void LineClearNotify()
