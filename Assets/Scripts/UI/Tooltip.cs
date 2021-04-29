@@ -36,8 +36,8 @@ public class Tooltip : MonoBehaviour
     public void UpdatePosition()
     {
         Vector3 mousePos = Input.mousePosition;//获取当前鼠标坐标
-        Debug.Log("鼠标位置: " + mousePos);
-        Debug.Log("Tooltip位置: " + transform.position);
+        //Debug.Log("鼠标位置: " + mousePos);
+        //Debug.Log("Tooltip位置: " + transform.position);
 
         //获取Tooltip的四个顶点坐标
         Vector3[] corners = new Vector3[4];

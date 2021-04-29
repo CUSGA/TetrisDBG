@@ -36,11 +36,11 @@ public class BattleManager : Singleton<BattleManager>
 
     float waitTime = 0.5f;//每次删除行之类的停顿时间
 
-    public bool isGameOver = false;//游戏是否结束
+    public bool isGamePause = true;//游戏是否结束
 
     void Start()
     {
-        CreateNewTetromino();
+        //CreateNewTetromino();
     }
 
     /// <summary>
@@ -48,7 +48,7 @@ public class BattleManager : Singleton<BattleManager>
     /// </summary>
     public void CreateNewTetromino()
     {
-        if (!isGameOver)
+        if (!isGamePause)
         {
             //随机在卡组中抽取一个Cube
             int n = Mathf.FloorToInt(Random.Range(0f, PlayerManager.Instance.tempDeck.Count));
@@ -298,7 +298,7 @@ public class BattleManager : Singleton<BattleManager>
     /// </summary>
     public void GameOver()
     {
-        isGameOver = true;
+        isGamePause = true;
         Debug.LogWarning("GAME OVER");
     }
 

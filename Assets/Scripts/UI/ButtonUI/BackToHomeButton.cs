@@ -6,7 +6,13 @@ public class BackToHomeButton : MonoBehaviour
 {
     public void TransToHome()
     {
-        BattleManager.Instance.isGameOver = false;
+        //BattleManager.Instance.isGamePause = false;
+        PlayerManager.Instance.currentHealth = PlayerManager.Instance.maxHealth;
         SceneController.Instance.TransitionToHomeScene();
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

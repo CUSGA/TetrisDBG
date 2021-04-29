@@ -15,7 +15,8 @@ public class A_AirRaid : Act
 
     public override string GetInfo()
     {
-        return "每隔 <color=red>" + triggerTime + "</color> 秒触发一次，每次在玩家卡组中加入 <color=red>" + EnemyManager.Instance.currentEnemy.actAirRaidNum + "</color> 个“炸弹”方块。\n" +
-            "炸弹方块被消除时，对玩家造成3点伤害";
+        return "每隔 <color=red>" + triggerTime + "</color> 秒触发一次，\n每次在玩家卡组中加入该状态层数" +
+            " <color=red>（" + EnemyManager.Instance.currentEnemy.actAirRaidNum + "）</color> 个 <color=red>“炸弹”</color> 方块。\n" +
+            " <color=red>“炸弹”</color> 方块被消除时，对玩家造成3点伤害";
     }
 }

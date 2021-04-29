@@ -41,4 +41,10 @@ public class A_CallOfDemon : Act
             }
         }
     }
+
+    public override string GetInfo()
+    {
+        return "每隔 <color=red>" + triggerTime + "</color> 秒触发一次，\n每次将场上该状态层数 <color=red>（" + EnemyManager.Instance.currentEnemy.actCallOfDemonNum + "）</color> " +
+            "个随机方块转换成 <color=red>“小恶魔”</color> 方块。\n场上每有一个 <color=red>“小恶魔”</color> ，该状态持有者获得一层 <color=red>“攻击”</color> 状态。";
+    }
 }

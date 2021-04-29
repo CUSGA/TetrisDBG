@@ -12,7 +12,7 @@ public class C_TroubleMaker : Cube, ILineClearObserver
 
     private void OnDisable()
     {
-        if (!BattleManager.Instance.isGameOver)
+        if (!BattleManager.Instance.isGamePause)
             BattleManager.Instance.RemoveLineClearObserver(this);
     }
 

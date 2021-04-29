@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 0}
   enemyName: "\u7A3B\u8349\u4EBA"
-  maxHealth: 20
+  maxHealth: 40
   currentHealth: 0
   buffShieldNum: 0
   buffPoisonNum: 0
@@ -61,5 +61,5 @@ MonoBehaviour:
   actCallOfDemonTime: 0
   actAttackNum_I: 5
   actAttackTime_I: 0
-  actArmorUpNum_I: 5
+  actArmorUpNum_I: 3
   actArmorUpTime_I: 0

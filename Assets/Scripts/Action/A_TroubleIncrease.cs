@@ -26,6 +26,6 @@ public class A_TroubleIncrease : Act, ILineClearObserver
 
     public override string GetInfo()
     {
-        return "每当有一行方块被消除时，获得 <color=red>" + EnemyManager.Instance.currentEnemy.actTroubleIncreaseNum + "</color> 层捣乱王";
+        return "每当有一行方块被消除时，\n持有者获得该状态层数 <color=red>（" + EnemyManager.Instance.currentEnemy.actTroubleIncreaseNum + "）</color> 层 <color=red>“捣乱王”</color> 。";
     }
 }

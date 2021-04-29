@@ -6,7 +6,7 @@ public class BackToMapButton : MonoBehaviour
 {
     public void BackToMap()
     {
-        //BattleManager.Instance.isGameOver = false;
+        //BattleManager.Instance.isGamePause = false;
         SceneController.Instance.TransitionToMapScene();
     }
 

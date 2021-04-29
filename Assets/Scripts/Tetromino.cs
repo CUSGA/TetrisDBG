@@ -39,7 +39,7 @@ public class Tetromino : MonoBehaviour
 
     void Update()
     {
-        if (moveAble && !BattleManager.Instance.isGameOver)
+        if (moveAble && !BattleManager.Instance.isGamePause)
         {
             //检测按键并移动方块组合
             if (Input.GetKeyDown(KeyCode.LeftArrow))

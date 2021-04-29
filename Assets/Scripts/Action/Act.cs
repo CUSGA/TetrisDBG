@@ -33,7 +33,7 @@ public abstract class Act : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     private void Update()
     {
-        if (!BattleManager.Instance.isGameOver)
+        if (!BattleManager.Instance.isGamePause)
             Trigger();//判断定时性Act并计时、触发效果、更改显示等
     }
 

@@ -92,7 +92,7 @@ public class SceneController : Singleton<SceneController>
     IEnumerator IETransitionToMapScene()
     {
         yield return SceneManager.LoadSceneAsync("Map");
-        BattleManager.Instance.isGameOver = false;
+        BattleManager.Instance.isGamePause = false;
         PlayerManager.Instance.ResetState();
         yield return null;
     }

@@ -12,7 +12,7 @@ public class A_TroubleMakerKing : Act, ILineClearObserver
 
     private void OnDisable()
     {
-        if (!BattleManager.Instance.isGameOver)
+        if (!BattleManager.Instance.isGamePause)
             BattleManager.Instance.RemoveLineClearObserver(this);
     }
 
@@ -28,6 +28,6 @@ public class A_TroubleMakerKing : Act, ILineClearObserver
 
     public override string GetInfo()
     {
-        return "每当有一行方块被消除时，造成 <color=red>" + EnemyManager.Instance.currentEnemy.actTroubleMakerKingNum + "</color> 点伤害";
+        return "每当有一行方块被消除时，\n对对方造成该状态层数 <color=red>（" + EnemyManager.Instance.currentEnemy.actTroubleMakerKingNum + "）</color> 点伤害";
     }
 }

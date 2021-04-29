@@ -10,7 +10,7 @@ public class B_AttackChip : Buff
 
     public override string GetInfo()
     {
-        return "当该Buff叠到 <color=red>" + 3 + "</color> 层以上时才会触发\n" +
-            "每次触发增加 <color=red>" + 1 + "</color> 层攻击Action\n";
+        return "当该状态叠到 <color=red>" + 3 + "</color> 层以上时才会触发\n" +
+            "每次触发增加 <color=red>" + 1 + "</color> 层 <color=red>“攻击”</color> 状态\n";
     }
 }

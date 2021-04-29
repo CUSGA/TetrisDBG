@@ -43,11 +43,11 @@ public class A_Attack : Act
     {
         if (belong == 0)
         {
-            return "每隔 <color=red>" + triggerTime + "</color> 秒触发一次，每次对对方造成 <color=red>" + PlayerManager.Instance.actAttackNum + "</color> 点伤害。";
+            return "每隔 <color=red>" + triggerTime + "</color> 秒触发一次，\n每次对对方造成该状态层数 <color=red>（" + PlayerManager.Instance.actAttackNum + "）</color> 点伤害。";
         }
         else
         {
-            return "每隔 <color=red>" + triggerTime + "</color> 秒触发一次，每次对对方造成 <color=red>" + EnemyManager.Instance.currentEnemy.actAttackNum + "</color> 点伤害。";
+            return "每隔 <color=red>" + triggerTime + "</color> 秒触发一次，\n每次对对方造成该状态层数 <color=red>（" + EnemyManager.Instance.currentEnemy.actAttackNum + "）</color> 点伤害。";
         }
     }
 }

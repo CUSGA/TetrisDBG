@@ -36,11 +36,11 @@ public class A_ArmorUp : Act
     {
         if (belong == 0)
         {
-            return "每 <color=red>" + triggerTime + "</color> 秒钟触发一次，每次增加 <color=red>" + PlayerManager.Instance.actArmorUpNum + "</color> 层护甲。";
+            return "每 <color=red>" + triggerTime + "</color> 秒钟触发一次，\n每次给持有者增加该状态层数 <color=red>（" + PlayerManager.Instance.actArmorUpNum + "）</color> 层 <color=red>“护盾”</color> 状态。";
         }
         else
         {
-            return "每 <color=red>" + triggerTime + "</color> 秒钟触发一次，每次增加 <color=red>" + EnemyManager.Instance.currentEnemy.actArmorUpNum + "</color> 层护甲。";
+            return "每 <color=red>" + triggerTime + "</color> 秒钟触发一次，\n每次给持有者增加该状态层数 <color=red>（" + EnemyManager.Instance.currentEnemy.actArmorUpNum + "）</color> 层 <color=red>“护盾”</color> 状态。";
         }
     }
 }
