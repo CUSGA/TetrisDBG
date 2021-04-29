@@ -37,7 +37,20 @@ public class SceneController : Singleton<SceneController>
     public void TransitionToBattleScene(GameObject stage)
     {
         Debug.Log("开始加载场景");
-        StartCoroutine(IETransitionToBattleScene(stage.GetComponent<Stage>().enemy));
+        StartCoroutine(IETransitionToBattleScene(stage.GetComponent<Stage>().enemy_LV1));
+        stage.GetComponent<Stage>().StageAbility();
+        PlayerManager.Instance.ResetTempDeck();
+    }
+
+    public void TransitionToBattleScene(GameObject stage, int level)
+    {
+        Debug.Log("开始加载场景");
+        switch(level)
+        {
+            case 1: StartCoroutine(IETransitionToBattleScene(stage.GetComponent<Stage>().enemy_LV1));break;
+            case 2: StartCoroutine(IETransitionToBattleScene(stage.GetComponent<Stage>().enemy_LV2));break;
+            case 3: StartCoroutine(IETransitionToBattleScene(stage.GetComponent<Stage>().enemy_LV3));break;
+        }
         stage.GetComponent<Stage>().StageAbility();
         PlayerManager.Instance.ResetTempDeck();
     }

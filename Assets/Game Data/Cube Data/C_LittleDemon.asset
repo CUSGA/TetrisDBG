@@ -17,6 +17,6 @@ MonoBehaviour:
   cubeCode: 14
   cubeIcon: {fileID: 21300000, guid: c728b60fefaef498c9b0fd3eeac1d663, type: 3}
   bgColor: {r: 0.5, g: 0.0023584962, b: 0.0023584962, a: 1}
-  ableTet: 
+  ableTet: 07000000
   description: "\u573A\u4E0A\u6BCF\u6709\u4E00\u4E2A <color=red>\u201C\u5C0F\u6076\u9B54\u201D</color>
     \uFF0C\u654C\u4EBA\u83B7\u5F97\u4E00\u5C42 <color=red>\u201C\u653B\u51FB\u201D</color> "

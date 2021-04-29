@@ -40,8 +40,9 @@ public class DeckExplorer : MonoBehaviour
             DeckCube dc = Instantiate(deckCube, deskTop.transform).GetComponent<DeckCube>();
             dc.SetCube(item);
         }
-        //DEBUG: 
-        MapUIManager.Instance.UpdateDeskTopHeight();
+        //DEBUG:
+        DeckUIManager.Instance.UpdateDeskTopHeight();
+        //MapUIManager.Instance.UpdateDeskTopHeight();
         //UpdateDeskTopHeight();
     }
 

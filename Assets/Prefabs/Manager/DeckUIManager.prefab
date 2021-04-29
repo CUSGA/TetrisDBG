@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3163011564952349344
+--- !u!1 &149914423969411741
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2286207949042503925}
-  - component: {fileID: 3702612527585320034}
+  - component: {fileID: 2727359848526928119}
+  - component: {fileID: 2665282748274938129}
   m_Layer: 0
-  m_Name: Stage_TroubleMakerKing
+  m_Name: DeckUIManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2286207949042503925
+--- !u!4 &2727359848526928119
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3163011564952349344}
+  m_GameObject: {fileID: 149914423969411741}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: -2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3702612527585320034
+--- !u!114 &2665282748274938129
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3163011564952349344}
+  m_GameObject: {fileID: 149914423969411741}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a8884afb7aac8c47b3fe8fa498ec995, type: 3}
+  m_Script: {fileID: 11500000, guid: 71a63f621e13cac47b9d86cb3be6d360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy_LV1: {fileID: 2682826066512667236, guid: 91d6d2031f2ea5c4a844251936277fce, type: 3}
-  enemy_LV2: {fileID: 4944416012397044223, guid: f438d1004f7880f4c9036a1726f5854d, type: 3}
-  enemy_LV3: {fileID: 4954737941166007279, guid: 4dd250347dc8b3f4d985a0ec7b0b7a31, type: 3}
+  deckExplorer: {fileID: 0}
+  deskTop: {fileID: 0}
