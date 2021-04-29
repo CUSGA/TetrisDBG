@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Õâ¸öÓÃÀ´±£´æÒ»ÏµÁĞÍæ¼ÒPlayerµÄÊı¾İ£¬°üÀ¨ÑªÁ¿¡¢»¤¶Ü¡¢Òì³£×´Ì¬¡¢¿¨×é¡¢½ğ±ÒÉ¶µÄ¡£
+//è¿™ä¸ªç”¨æ¥ä¿å­˜ä¸€ç³»åˆ—ç©å®¶Playerçš„æ•°æ®ï¼ŒåŒ…æ‹¬è¡€é‡ã€æŠ¤ç›¾ã€å¼‚å¸¸çŠ¶æ€ã€å¡ç»„ã€é‡‘å¸å•¥çš„ã€‚
 public class PlayerManager : Singleton<PlayerManager>
 {
     public int maxHealth = 100;
     public int currentHealth;
 
-    [Tooltip("µ±Ç°ÄÜ¹»ÕÙ»½³öÀ´µÄËùÓĞCubeÀàĞÍ£¬Ò²¾ÍÊÇÍæ¼ÒµÄ¿¨×é")]
+    [Tooltip("å½“å‰èƒ½å¤Ÿå¬å”¤å‡ºæ¥çš„æ‰€æœ‰Cubeç±»å‹ï¼Œä¹Ÿå°±æ˜¯ç©å®¶çš„å¡ç»„")]
     public List<GameObject> Deck = new List<GameObject>();
     [HideInInspector]
     public List<GameObject> tempDeck = new List<GameObject>();
     //public GameObject[] Deck;
 
-    [Header("BuffÁĞ±í")]
-    #region BuffÁĞ±í BuffList
+    [Header("Buffåˆ—è¡¨")]
+    #region Buffåˆ—è¡¨ BuffList
 
     public int buffShield = 0;
 
@@ -26,12 +26,12 @@ public class PlayerManager : Singleton<PlayerManager>
 
     #endregion
 
-    [Header("ActÁĞ±í")]
-    #region ActÁĞ±í£¬ActList
+    [Header("Actåˆ—è¡¨")]
+    #region Actåˆ—è¡¨ï¼ŒActList
 
-    //ÒòÎªAttack¶¯×÷±È½ÏÌØÊâ£¬²»Í¬µĞÈË»áÓĞ×Ô¼º¶ÀÌØµÄ¹¥»÷½Ú×à£¬ËùÒÔ¶àÒ»¸öÊôĞÔÀ´ÃèÊö
+    //å› ä¸ºAttackåŠ¨ä½œæ¯”è¾ƒç‰¹æ®Šï¼Œä¸åŒæ•Œäººä¼šæœ‰è‡ªå·±ç‹¬ç‰¹çš„æ”»å‡»èŠ‚å¥ï¼Œæ‰€ä»¥å¤šä¸€ä¸ªå±æ€§æ¥æè¿°
     public int actAttackNum = 0;
-    public float actAttackTime = 0;//¸Ã¹¥»÷¶¯×÷´¥·¢Ê±¼ä£¬±ØĞë´óÓÚ0£¬ÈôÎª0µÄ»°¾ÍÄ¬ÈÏ¸ÄÎª5
+    public float actAttackTime = 0;//è¯¥æ”»å‡»åŠ¨ä½œè§¦å‘æ—¶é—´ï¼Œå¿…é¡»å¤§äº0ï¼Œè‹¥ä¸º0çš„è¯å°±é»˜è®¤æ”¹ä¸º5
 
     public int actArmorUpNum = 0;
     public float actArmorUpTime = 0;
@@ -46,19 +46,19 @@ public class PlayerManager : Singleton<PlayerManager>
 
     private void Start()
     {
-        //TODO: ÑªÁ¿ÕâÀïÃ¿´Î¿ªÕ½¶¼»ØÂú£¬²âÊÔÓÃµÄÈ¨ÒËÖ®¼Æ¡£
+        //TODO: è¡€é‡è¿™é‡Œæ¯æ¬¡å¼€æˆ˜éƒ½å›æ»¡ï¼Œæµ‹è¯•ç”¨çš„æƒå®œä¹‹è®¡ã€‚
         currentHealth = maxHealth;
 
         ResetTempDeck();
     }
 
     /// <summary>
-    /// Player±»¹¥»÷
+    /// Playerè¢«æ”»å‡»
     /// </summary>
-    /// <param name="dmg">±»¹¥»÷µÄÉËº¦Á¿</param>
+    /// <param name="dmg">è¢«æ”»å‡»çš„ä¼¤å®³é‡</param>
     public void BeAttack(int dmg)
     {
-        //´¦ÀíBuff£¬±ÈÈç»¤¶Ü£¬¼õÉËµÈ£¬È»ºó¼õÉÙÑªÁ¿
+        //å¤„ç†Buffï¼Œæ¯”å¦‚æŠ¤ç›¾ï¼Œå‡ä¼¤ç­‰ï¼Œç„¶åå‡å°‘è¡€é‡
         if (dmg <= buffShield)
         {
             buffShield -= dmg;
@@ -70,16 +70,17 @@ public class PlayerManager : Singleton<PlayerManager>
             if (currentHealth <= 0)
             {
                 currentHealth = 0;
+                UIManager.Instance.Lose();
                 BattleManager.Instance.GameOver();
             }
         }
 
-        //¸üĞÂUIÏÔÊ¾
+        //æ›´æ–°UIæ˜¾ç¤º
         UIManager.Instance.UpdateUI();
     }
 
     /// <summary>
-    /// ÖØÖÃËùÓĞBuffºÍAct
+    /// é‡ç½®æ‰€æœ‰Buffå’ŒAct
     /// </summary>
     public void ResetState()
     {
@@ -92,7 +93,7 @@ public class PlayerManager : Singleton<PlayerManager>
     }
 
     /// <summary>
-    /// °ÑÁÙÊ±¿¨×étempDeck»¹Ô­»ØÍæ¼Ò¿¨×éDeckµÄÄÚÈİ
+    /// æŠŠä¸´æ—¶å¡ç»„tempDeckè¿˜åŸå›ç©å®¶å¡ç»„Deckçš„å†…å®¹
     /// </summary>
     public void ResetTempDeck()
     {
