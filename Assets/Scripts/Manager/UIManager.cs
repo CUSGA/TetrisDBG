@@ -41,7 +41,7 @@ public class UIManager : Singleton<UIManager>
     
     public void UpdateUI()
     {
-        Debug.Log("更新UI");
+        //Debug.Log("更新UI");
         //更新Player相关的UI
         //更新Player的血量显示
         UpdatePlayerHealthUI();
@@ -341,6 +341,27 @@ public class UIManager : Singleton<UIManager>
         else
         {
             Transform actObj = FindBuffObjectFromHolder(3, "Act_TroubleIncrease");//修改
+            if (actObj != null)
+                Destroy(actObj.gameObject);
+        }
+
+        if (EnemyManager.Instance.currentEnemy.actCallOfDemonNum > 0)//修改
+        {
+            Transform actObj = FindBuffObjectFromHolder(3, "Act_CallOfDemon");//修改
+            if (actObj != null)
+            {
+                actObj.GetComponent<Act>().numText.text = EnemyManager.Instance.currentEnemy.actCallOfDemonNum.ToString();//修改
+            }
+            else
+            {
+                Act b = Instantiate(AllActs[5], enemyActHolder.transform).GetComponent<Act>();//修改
+                b.numText.text = EnemyManager.Instance.currentEnemy.actCallOfDemonNum.ToString();//修改
+                b.belong = 1;
+            }
+        }
+        else
+        {
+            Transform actObj = FindBuffObjectFromHolder(3, "Act_CallOfDemon");//修改
             if (actObj != null)
                 Destroy(actObj.gameObject);
         }

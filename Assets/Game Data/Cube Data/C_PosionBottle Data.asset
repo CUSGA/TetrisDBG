@@ -18,4 +18,5 @@ MonoBehaviour:
   cubeIcon: {fileID: 21300000, guid: 338ec99944cb24b6fb5ed6024e6fe7b2, type: 3}
   bgColor: {r: 0.062745094, g: 0.8, b: 0, a: 1}
   ableTet: 08000000
-  description: "\u6B64\u65B9\u5757\u88AB\u6D88\u9664\u65F6\uFF0C\u7ED9\u5BF9\u65B9\u53E0\u52A02\u5C42\u4E2D\u6BD2\u3002"
+  description: "\u6B64\u65B9\u5757\u88AB\u6D88\u9664\u65F6\uFF0C\u7ED9\u5BF9\u65B9\u53E0\u52A0
+    <color=red>2</color> \u5C42 <color=red>\u4E2D\u6BD2</color> \u3002"

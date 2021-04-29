@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 379e17972cf67414d9e28530b69e73a1, type: 3}
+  m_Name: C_Magnet_S Data
+  m_EditorClassIdentifier: 
+  cubeName: "\u78C1\u77F3-\u5357"
+  cubeEnName: Magnet_S
+  cubeCode: 11
+  cubeIcon: {fileID: 21300000, guid: 37a3b370cbc214ba890ef637aeea92f6, type: 3}
+  bgColor: {r: 0.4, g: 0.5333334, b: 0.8, a: 1}
+  ableTet: 00000000010000000200000003000000040000000500000006000000
+  description: "\u6B64\u65B9\u5757\u88AB\u6D88\u9664\u65F6\uFF0C\u82E5\u5728\u540C\u4E00\u884C\u7684\u5DE6\u4FA7\u6709
+    <color=red>\u201C\u78C1\u77F3-\u5317\u201D</color> \u5B58\u5728\uFF0C\u9020\u6210
+    <color=red>3</color> \u70B9\u4F24\u5BB3\uFF0C\n\u5426\u5219\u9020\u6210 <color=red>1</color>
+    \u70B9\u4F24\u5BB3\u3002"

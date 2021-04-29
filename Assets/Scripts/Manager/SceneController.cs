@@ -44,7 +44,6 @@ public class SceneController : Singleton<SceneController>
 
     IEnumerator IETransitionToBattleScene(GameObject stage)
     {
-        //TODO: 记得这里，切换场景时改名
         yield return SceneManager.LoadSceneAsync("Scene1");
         EnemyManager.Instance.SetEnemy(stage);
         yield return null;
@@ -71,11 +70,24 @@ public class SceneController : Singleton<SceneController>
 
     IEnumerator IETransitionToMapScene()
     {
-        yield return SceneManager.LoadSceneAsync("MapScene_Test");
+        yield return SceneManager.LoadSceneAsync("Map");
         PlayerManager.Instance.ResetState();
         yield return null;
     }
-    
+
+    public void TransitionToMap_TestScene()
+    {
+        StartCoroutine(IETransitionToMap_TestScene());
+        PlayerManager.Instance.ResetTempDeck();
+    }
+
+    IEnumerator IETransitionToMap_TestScene()
+    {
+        yield return SceneManager.LoadSceneAsync("Map_Test");
+        PlayerManager.Instance.ResetState();
+        yield return null;
+    }
+
     public void TransitionToHomeScene()
     {
         StartCoroutine(IETransitionToHomeScene());

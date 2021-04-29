@@ -46,10 +46,10 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   Deck:
+  - {fileID: 3788139457150861145, guid: e9a0287c282c9d244a27d95a7b9c0e1a, type: 3}
+  - {fileID: 6057510824581399432, guid: e8d7d1723f8cde449a34555b357a6480, type: 3}
   - {fileID: 8989566570439505539, guid: 66948b6e721e1b540bf77b3c978cedb7, type: 3}
   - {fileID: 8989566570439505539, guid: d820fc108cf4d1d4dbf98b74660b66f7, type: 3}
-  - {fileID: 1106407909558450090, guid: 8190ccd8077e36c41ac8fd7bee8fa1d3, type: 3}
-  - {fileID: 8303262145140714680, guid: 53d1a4ed31114eb4f87669b7b2710fb8, type: 3}
   tempDeck: []
   buffShield: 0
   buffShieldMultiplyChip: 0

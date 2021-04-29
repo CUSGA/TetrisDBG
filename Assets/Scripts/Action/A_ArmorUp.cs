@@ -22,7 +22,7 @@ public class A_ArmorUp : Act
             PlayerManager.Instance.buffShield += PlayerManager.Instance.actArmorUpNum;
         }else if (belong == 1)
         {
-            Debug.LogWarning("增加敌人的防御" + EnemyManager.Instance.currentEnemy.actArmorUpNum);
+            //Debug.LogWarning("增加敌人的防御" + EnemyManager.Instance.currentEnemy.actArmorUpNum);
             EnemyManager.Instance.currentEnemy.buffShieldNum += EnemyManager.Instance.currentEnemy.actArmorUpNum;
         }
         else

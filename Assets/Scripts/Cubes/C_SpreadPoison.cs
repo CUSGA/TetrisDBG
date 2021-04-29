@@ -12,7 +12,7 @@ public class C_SpreadPoison : Cube
         int posX = Mathf.RoundToInt(transform.position.x);
         int posY = Mathf.RoundToInt(transform.position.y);
 
-        Debug.Log("我是：" + name + "，我的坐标是：(" + posX + ", " + posY + ")");
+        //Debug.Log("我是：" + name + "，我的坐标是：(" + posX + ", " + posY + ")");
 
         int fX = posX - 1;
         int fY = posY - 1;
@@ -40,11 +40,11 @@ public class C_SpreadPoison : Cube
         if (BattleManager.Instance.grid[ffX, ffY] != null && BattleManager.Instance.grid[ffX, ffY].GetComponent<CubeHolder>().cube.cubeData.cubeEnName != "SpreadPoison")
         {
             BattleManager.Instance.grid[ffX, ffY].GetComponent<CubeHolder>().ChangeCube(gameObject);
-            Debug.Log("坐标为（" + ffX + ", " + ffY + ")已被感染为" + BattleManager.Instance.grid[ffX, ffY].GetComponent<CubeHolder>().cube.name);
+            //Debug.Log("坐标为（" + ffX + ", " + ffY + ")已被感染为" + BattleManager.Instance.grid[ffX, ffY].GetComponent<CubeHolder>().cube.name);
         }
         else
         {
-            Debug.Log("坐标为（" + ffX + ", " + ffY + ")的不触发效果。");
+            //Debug.Log("坐标为（" + ffX + ", " + ffY + ")的不触发效果。");
         }
     }
 }

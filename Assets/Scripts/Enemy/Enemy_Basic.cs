@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy_Basic : Enemy
 {
     //这里存储的是该Enemy的初始数据
-    [Header("在这里设置Enemy技能的参数，即Enemy_Basic的初始Act的属性。I代表初始的意思")]
+    [Header("Enemy的基础属性。")]//即Enemy_Basic的初始Act的属性。I代表初始的意思
     [Tooltip("攻击的层数")]
     public int actAttackNum_I;
     [Tooltip("攻击的触发间隔。若大于0，则会覆盖攻击的默认触发间隔。")]

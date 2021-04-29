@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2882346291036547921
+--- !u!1 &5324192422921166302
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,36 +8,36 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6688781711062681727}
-  - component: {fileID: 715105702339944947}
+  - component: {fileID: 4409061306467516144}
+  - component: {fileID: 7498461193560594300}
   m_Layer: 0
-  m_Name: Enemy_BomberAirShip
+  m_Name: Enemy_BomberAirShip_LV3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6688781711062681727
+--- !u!4 &4409061306467516144
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2882346291036547921}
+  m_GameObject: {fileID: 5324192422921166302}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 2, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &715105702339944947
+--- !u!114 &7498461193560594300
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2882346291036547921}
+  m_GameObject: {fileID: 5324192422921166302}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31c6ed5d969bbd54397c8337a091e275, type: 3}
@@ -47,12 +47,17 @@ MonoBehaviour:
   enemyName: "\u7A7A\u88AD\u98DE\u8247"
   maxHealth: 70
   currentHealth: 0
-  buffShield: 0
+  buffShieldNum: 0
+  buffPoisonNum: 0
   actAttackNum: 0
   actAttackTime: 0
   actArmorUpNum: 0
   actArmorUpTime: 0
   actAirRaidNum: 0
   actAirRaidTime: 0
+  actTroubleMakerKingNum: 0
+  actTroubleIncreaseNum: 0
+  actCallOfDemonNum: 0
+  actCallOfDemonTime: 0
   actAirRaidNum_I: 1
-  actAirRaidTime_I: 10
+  actAirRaidTime_I: 7

@@ -38,6 +38,9 @@ public class Enemy : MonoBehaviour
     public int actTroubleMakerKingNum = 0;
     public int actTroubleIncreaseNum = 0;
 
+    public int actCallOfDemonNum = 0;
+    public int actCallOfDemonTime = 0;
+
     #endregion
 
     protected void Start()

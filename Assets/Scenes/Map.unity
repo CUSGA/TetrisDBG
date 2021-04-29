@@ -394,7 +394,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8825001, y: 0.81500006}
   m_AnchorMax: {x: 0.97375, y: 0.952}
-  m_AnchoredPosition: {x: 0, y: 0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0.0000076294, y: 0.000022888}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &226952936
@@ -406,7 +406,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 226952934}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82723693e941ce045a9a4bd775476b26, type: 3}
+  m_Script: {fileID: 11500000, guid: 6fba958f25bb5e141bb2f82ca2d7aa47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &226952937
@@ -454,8 +454,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 226952936}
-        m_TargetAssemblyTypeName: BackToHomeButton, Assembly-CSharp
-        m_MethodName: TransToHome
+        m_TargetAssemblyTypeName: SceneChangeButton, Assembly-CSharp
+        m_MethodName: GoToShop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1065,8 +1065,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 741679675}
-        m_TargetAssemblyTypeName: BackToHomeButton, Assembly-CSharp
-        m_MethodName: TransToHome
+        m_TargetAssemblyTypeName: SceneChangeButton, Assembly-CSharp
+        m_MethodName: GoToHome
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1123,7 +1123,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 741679670}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82723693e941ce045a9a4bd775476b26, type: 3}
+  m_Script: {fileID: 11500000, guid: 6fba958f25bb5e141bb2f82ca2d7aa47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &756806104
@@ -1519,7 +1519,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2, y: -19.8}
+  m_AnchoredPosition: {x: 2, y: -19.799995}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1151286616
@@ -1646,8 +1646,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1001021167}
   m_HandleRect: {fileID: 1001021166}
   m_Direction: 3
-  m_Value: 0.00000009467513
-  m_Size: 0.5931797
+  m_Value: 0.000000094675094
+  m_Size: 0.59317964
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

@@ -2384,5 +2384,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShopManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3220915259465021419, guid: 95842f43f3856a14ba876081b118c7f8, type: 3}
+      propertyPath: AllShopCube.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3220915259465021419, guid: 95842f43f3856a14ba876081b118c7f8, type: 3}
+      propertyPath: AllShopCube.Array.data[9]
+      value: 
+      objectReference: {fileID: 8689661333695145477, guid: f0cfdbfe35430c441baf97afe0e6f96d, type: 3}
+    - target: {fileID: 3220915259465021419, guid: 95842f43f3856a14ba876081b118c7f8, type: 3}
+      propertyPath: AllShopCube.Array.data[10]
+      value: 
+      objectReference: {fileID: 6057510824581399432, guid: e8d7d1723f8cde449a34555b357a6480, type: 3}
+    - target: {fileID: 3220915259465021419, guid: 95842f43f3856a14ba876081b118c7f8, type: 3}
+      propertyPath: AllShopCube.Array.data[11]
+      value: 
+      objectReference: {fileID: 3788139457150861145, guid: e9a0287c282c9d244a27d95a7b9c0e1a, type: 3}
+    - target: {fileID: 3220915259465021419, guid: 95842f43f3856a14ba876081b118c7f8, type: 3}
+      propertyPath: AllShopCube.Array.data[12]
+      value: 
+      objectReference: {fileID: 985153937541579662, guid: 06bea7c04523db7489c92b9c8b1d0719, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95842f43f3856a14ba876081b118c7f8, type: 3}
