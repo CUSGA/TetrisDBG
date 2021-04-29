@@ -435,6 +435,10 @@ public class UIManager : Singleton<UIManager>
     
     public void Win()
     {
+        if (MapUIManager.Instance.curLevel <= 11)
+        {
+            MapUIManager.Instance.curLevel += 1;
+        }
         StartCoroutine(IEWin());
     }
 
@@ -454,6 +458,7 @@ public class UIManager : Singleton<UIManager>
 
     public void Lose()
     {
+        MapUIManager.Instance.curLevel = 0;
         StartCoroutine(IELose());
     }
 
