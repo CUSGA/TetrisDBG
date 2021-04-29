@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//ËùÓĞEnemyµÄ¸¸Àà£¬ÓÃÀ´±£´æEnemyµÄÊı¾İ¡¢¹ÒBuffºÍAction£¬³ĞÊÜ¹¥»÷µÈ
+//æ‰€æœ‰Enemyçš„çˆ¶ç±»ï¼Œç”¨æ¥ä¿å­˜Enemyçš„æ•°æ®ã€æŒ‚Buffå’ŒActionï¼Œæ‰¿å—æ”»å‡»ç­‰
 public class Enemy : MonoBehaviour
 {
     public Sprite img;
-    public string enemyName;//ÒòÎªºÍGameObjectµÄname³åÍ»ÁË£¬ËùÒÔ¸Ä¸öÆæ¹ÖµãµÄÃû×Ö
+    public string enemyName;//å› ä¸ºå’ŒGameObjectçš„nameå†²çªäº†ï¼Œæ‰€ä»¥æ”¹ä¸ªå¥‡æ€ªç‚¹çš„åå­—
     public int maxHealth;
     public int currentHealth;
 
-    //ÕâÀïµÄActºÍBuffÁĞ±íÊÇÊµÊ±µÄ£¬Ò²¾ÍÊÇËµ»áËæ×ÅÓÎÏ·µÄ½øĞĞÊÜµ½Ä³Ğ©Ğ§¹ûÓ°Ïì¶ø¸Ä±äµÄ¡£
-    //ÔÚ¸÷×ÔµÄEnemyÀàÀïÃæ´æ´¢µÄÔòÊÇ¸ÃEnemyµÄ³õÊ¼Êı¾İ¡£
-    [Header("µ±Ç°µÄBuffÁĞ±í¡£¼ìÊÓÓÃ£¬²»ÓÃĞŞ¸Ä¡£")]
-    #region BuffÁĞ±í£¬BuffList
+    //è¿™é‡Œçš„Actå’ŒBuffåˆ—è¡¨æ˜¯å®æ—¶çš„ï¼Œä¹Ÿå°±æ˜¯è¯´ä¼šéšç€æ¸¸æˆçš„è¿›è¡Œå—åˆ°æŸäº›æ•ˆæœå½±å“è€Œæ”¹å˜çš„ã€‚
+    //åœ¨å„è‡ªçš„Enemyç±»é‡Œé¢å­˜å‚¨çš„åˆ™æ˜¯è¯¥Enemyçš„åˆå§‹æ•°æ®ã€‚
+    [Header("å½“å‰çš„Buffåˆ—è¡¨ã€‚æ£€è§†ç”¨ï¼Œä¸ç”¨ä¿®æ”¹ã€‚")]
+    #region Buffåˆ—è¡¨ï¼ŒBuffList
 
     public int buffShieldNum = 0;
 
@@ -22,12 +22,12 @@ public class Enemy : MonoBehaviour
 
     #endregion
 
-    [Header("µ±Ç°µÄActÁĞ±í¡£¼ìÊÓÓÃ£¬²»ÓÃĞŞ¸Ä¡£")]
-    #region ActÁĞ±í£¬ActList
+    [Header("å½“å‰çš„Actåˆ—è¡¨ã€‚æ£€è§†ç”¨ï¼Œä¸ç”¨ä¿®æ”¹ã€‚")]
+    #region Actåˆ—è¡¨ï¼ŒActList
 
-    //ÒòÎªAttack¶¯×÷±È½ÏÌØÊâ£¬²»Í¬µĞÈË»áÓĞ×Ô¼º¶ÀÌØµÄ¹¥»÷½Ú×à£¬ËùÒÔ¶àÒ»¸öÊôĞÔÀ´ÃèÊö
+    //å› ä¸ºAttackåŠ¨ä½œæ¯”è¾ƒç‰¹æ®Šï¼Œä¸åŒæ•Œäººä¼šæœ‰è‡ªå·±ç‹¬ç‰¹çš„æ”»å‡»èŠ‚å¥ï¼Œæ‰€ä»¥å¤šä¸€ä¸ªå±æ€§æ¥æè¿°
     public int actAttackNum = 0;
-    public float actAttackTime = 0;//¸Ã¹¥»÷¶¯×÷´¥·¢Ê±¼ä£¬±ØĞë´óÓÚ0£¬ÈôÎª0µÄ»°¾ÍÄ¬ÈÏ¸ÄÎª5
+    public float actAttackTime = 0;//è¯¥æ”»å‡»åŠ¨ä½œè§¦å‘æ—¶é—´ï¼Œå¿…é¡»å¤§äº0ï¼Œè‹¥ä¸º0çš„è¯å°±é»˜è®¤æ”¹ä¸º5
 
     public int actArmorUpNum = 0;
     public float actArmorUpTime = 0;
@@ -45,17 +45,17 @@ public class Enemy : MonoBehaviour
 
     protected void Start()
     {
-        //TODO: ÑªÁ¿ÕâÀïÃ¿´Î¿ªÕ½¶¼»ØÂú£¬²âÊÔÓÃµÄÈ¨ÒËÖ®¼Æ¡£
+        //TODO: è¡€é‡è¿™é‡Œæ¯æ¬¡å¼€æˆ˜éƒ½å›æ»¡ï¼Œæµ‹è¯•ç”¨çš„æƒå®œä¹‹è®¡ã€‚
         currentHealth = maxHealth;
     }
 
     /// <summary>
-    /// Enemy±»¹¥»÷
+    /// Enemyè¢«æ”»å‡»
     /// </summary>
-    /// <param name="dmg">±»¹¥»÷µÄÉËº¦Á¿</param>
+    /// <param name="dmg">è¢«æ”»å‡»çš„ä¼¤å®³é‡</param>
     public void BeAttack(int dmg)
     {
-        Debug.Log("µĞÈËÊÜµ½¹¥»÷£º" + dmg + "µã");
+        Debug.Log("æ•Œäººå—åˆ°æ”»å‡»ï¼š" + dmg + "ç‚¹");
         if (dmg <= buffShieldNum)
         {
             buffShieldNum -= dmg;
@@ -69,11 +69,11 @@ public class Enemy : MonoBehaviour
             {
                 //TODO: GAME OVER
                 currentHealth = 0;
-                Debug.LogWarning("WIN");
+                UIManager.Instance.Win();
             }
         }
 
-        //¸üĞÂUIÏÔÊ¾
+        //æ›´æ–°UIæ˜¾ç¤º
         UIManager.Instance.UpdateUI();
     }
 }
