@@ -435,11 +435,30 @@ public class UIManager : Singleton<UIManager>
     
     public void Win()
     {
-        if (PlayerManager.Instance.curLevel <= 16)
+        if (MapUIManager.Instance.curLevel <= 10)
         {
-            PlayerManager.Instance.curLevel += 1;
+            MapUIManager.Instance.curLevel += 1;
+            StartCoroutine(IEWin());
         }
-        StartCoroutine(IEWin());
+        else
+        {
+            MapUIManager.Instance.curLevel = 0;
+            StartCoroutine(IEFinal());
+        }
+    }
+
+    IEnumerator IEFinal()
+    {
+        float time = winTime;
+        GameObject background = finalBackground;
+        background.SetActive(true);
+        float interval = 255 / winTime;
+        while (time > 0)
+        {
+            background.GetComponent<Image>().color += new Color(0, 0, 0, Time.deltaTime * interval / 255);
+            time -= Time.deltaTime;
+            yield return null;
+        }
     }
 
     IEnumerator IEWin()
@@ -458,7 +477,7 @@ public class UIManager : Singleton<UIManager>
 
     public void Lose()
     {
-        PlayerManager.Instance.curLevel = 0;
+        MapUIManager.Instance.curLevel = 0;
         StartCoroutine(IELose());
     }
 
