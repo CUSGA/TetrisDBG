@@ -428,4 +428,43 @@ public class UIManager : Singleton<UIManager>
     {
         deckExplorer.SetActive(true);
     }
+    
+    public void Win()
+    {
+        StartCoroutine(IEWin());
+    }
+
+    IEnumerator IEWin()
+    {
+        float time = winTime;
+        GameObject background = winBackground;
+        background.SetActive(true);
+        float interval = 126 / winTime;
+        while (time > 0)
+        {
+            background.GetComponent<Image>().color += new Color(0,0,0, Time.deltaTime * interval / 255);
+            time -= Time.deltaTime;
+            yield return null;
+        }
+    }
+
+    public void Lose()
+    {
+        StartCoroutine(IELose());
+    }
+
+    IEnumerator IELose()
+    {
+        float time = loseTime;
+        GameObject background = loseBackground;
+        background.SetActive(true);
+        float interval = 126 / loseTime;
+        while (time > 0)
+        {
+            Debug.Log("Lose");
+            background.GetComponent<Image>().color += new Color(0, 0, 0, Time.deltaTime * interval / 255);
+            time -= Time.deltaTime;
+            yield return null;
+        }
+    }
 }
