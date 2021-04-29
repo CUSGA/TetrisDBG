@@ -442,6 +442,7 @@ public class UIManager : Singleton<UIManager>
         }
         else
         {
+            MapUIManager.Instance.curLevel = 0;
             StartCoroutine(IEFinal());
         }
     }
