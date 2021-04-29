@@ -2979,7 +2979,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 612051029}
-  - {fileID: 1989661934}
+  - {fileID: 1463267178}
   m_Father: {fileID: 1648603690}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4032,7 +4032,7 @@ GameObject:
   - component: {fileID: 1463267180}
   - component: {fileID: 1463267179}
   m_Layer: 5
-  m_Name: WinImage
+  m_Name: LoseImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4049,7 +4049,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1510023116}
+  m_Father: {fileID: 825667378}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.46190244, y: 0.35702035}
@@ -4194,7 +4194,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 750661010}
-  - {fileID: 1463267178}
+  - {fileID: 1989661934}
   m_Father: {fileID: 1648603690}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4982,7 +4982,7 @@ GameObject:
   - component: {fileID: 1989661938}
   - component: {fileID: 1989661937}
   m_Layer: 5
-  m_Name: LoseImage
+  m_Name: WinImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4995,11 +4995,11 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1989661933}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 825667378}
+  m_Father: {fileID: 1510023116}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.46190244, y: 0.35702035}
@@ -5839,17 +5839,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8006980933926008571}
     - target: {fileID: 4786206628721208476, guid: eea821be840a00f4188b73309bbf61fe, type: 3}
-      propertyPath: winBackground
-      value: 
-      objectReference: {fileID: 1510023115}
-    - target: {fileID: 4786206628721208476, guid: eea821be840a00f4188b73309bbf61fe, type: 3}
       propertyPath: enemyActHolder
       value: 
       objectReference: {fileID: 744712662}
-    - target: {fileID: 4786206628721208476, guid: eea821be840a00f4188b73309bbf61fe, type: 3}
-      propertyPath: loseBackground
-      value: 
-      objectReference: {fileID: 825667377}
     - target: {fileID: 4786206628721208476, guid: eea821be840a00f4188b73309bbf61fe, type: 3}
       propertyPath: enemyBuffHolder
       value: 
@@ -5991,8 +5983,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7312137786798262307, guid: 04f45d05e8b54644cb8faca7d4e43d0e, type: 3}
+      propertyPath: maxHealth
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7312137786798262307, guid: 04f45d05e8b54644cb8faca7d4e43d0e, type: 3}
       propertyPath: currentHealth
-      value: 100
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 7312137786798262332, guid: 04f45d05e8b54644cb8faca7d4e43d0e, type: 3}
       propertyPath: m_Name

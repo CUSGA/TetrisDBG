@@ -29,6 +29,10 @@ public class UIManager : Singleton<UIManager>
     [Header("别的")]
     public Tooltip tooltip;
     public GameObject deckExplorer;
+    public GameObject winBackground;
+    public GameObject loseBackground;
+    public float winTime = 2f;
+    public float loseTime = 2f;
     
     private float originalSize1;
     private float originalSize2;
@@ -427,5 +431,49 @@ public class UIManager : Singleton<UIManager>
     public void OpenDeckExplorer()
     {
         deckExplorer.SetActive(true);
+    }
+    
+    public void Win()
+    {
+        if (MapUIManager.Instance.curLevel <= 11)
+        {
+            MapUIManager.Instance.curLevel += 1;
+        }
+        StartCoroutine(IEWin());
+    }
+
+    IEnumerator IEWin()
+    {
+        float time = winTime;
+        GameObject background = winBackground;
+        background.SetActive(true);
+        float interval = 126 / winTime;
+        while (time > 0)
+        {
+            background.GetComponent<Image>().color += new Color(0,0,0, Time.deltaTime * interval / 255);
+            time -= Time.deltaTime;
+            yield return null;
+        }
+    }
+
+    public void Lose()
+    {
+        MapUIManager.Instance.curLevel = 0;
+        StartCoroutine(IELose());
+    }
+
+    IEnumerator IELose()
+    {
+        float time = loseTime;
+        GameObject background = loseBackground;
+        background.SetActive(true);
+        float interval = 126 / loseTime;
+        while (time > 0)
+        {
+            Debug.Log("Lose");
+            background.GetComponent<Image>().color += new Color(0, 0, 0, Time.deltaTime * interval / 255);
+            time -= Time.deltaTime;
+            yield return null;
+        }
     }
 }
