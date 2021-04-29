@@ -690,7 +690,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 626380889}
         m_TargetAssemblyTypeName: BackToMapButton, Assembly-CSharp
-        m_MethodName: BackToMap
+        m_MethodName: FromShopBackToMap
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

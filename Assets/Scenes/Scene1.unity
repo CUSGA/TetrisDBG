@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -675,11 +675,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5719768495728895412, guid: ef7006afa0fb0424287680efcb639853, type: 3}
+    - target: {fileID: 1818821585770972889, guid: ef7006afa0fb0424287680efcb639853, type: 3}
       propertyPath: deskTop
       value: 
       objectReference: {fileID: 8006980933926008572}
-    - target: {fileID: 5719768495728895412, guid: ef7006afa0fb0424287680efcb639853, type: 3}
+    - target: {fileID: 1818821585770972889, guid: ef7006afa0fb0424287680efcb639853, type: 3}
       propertyPath: deckExplorer
       value: 
       objectReference: {fileID: 8006980933926008571}

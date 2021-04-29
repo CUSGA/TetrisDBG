@@ -8,4 +8,10 @@ public class BackToMapButton : MonoBehaviour
     {
         SceneController.Instance.TransitionToMapScene();
     }
+
+    public void FromShopBackToMap()
+    {
+        SceneController.Instance.TransitionToMapScene();
+        PlayerManager.Instance.curLevel += 1;
+    }
 }

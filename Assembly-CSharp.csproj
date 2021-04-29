@@ -60,8 +60,10 @@
     <Compile Include="Assets\Scripts\Cubes\C_Bell.cs" />
     <Compile Include="Assets\Scripts\UI\MapUI\BattleButton.cs" />
     <Compile Include="Assets\Scripts\Cubes\C_ShieldMultiplyChip.cs" />
+    <Compile Include="Assets\Scripts\Stage\Stage_DemonLeader.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Scripts\Action\Act.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Enemy_FinalBoss.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\Scripts\UI\DeckExplorer.cs" />
     <Compile Include="Assets\Scripts\Cubes\C_Shield.cs" />
@@ -132,6 +134,7 @@
     <Compile Include="Assets\Scripts\Stage\Stage.cs" />
     <Compile Include="Assets\Scripts\Action\A_AirRaid.cs" />
     <Compile Include="Assets\Scripts\Buff\B_Poison.cs" />
+    <Compile Include="Assets\Scripts\Manager\DeckUIManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\Scripts\Shop\GoodHolder.cs" />
@@ -155,9 +158,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\Cubes\Cube.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
-    <Compile Include="Assets\Scripts\Manager\DeckUIManager.cs" />
-    <Compile Include="Assets\Scripts\Stage\Stage_DemonLeader.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Enemy_FinalBoss.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

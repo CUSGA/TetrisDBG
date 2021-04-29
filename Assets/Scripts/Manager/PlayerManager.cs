@@ -7,6 +7,7 @@ public class PlayerManager : Singleton<PlayerManager>
 {
     public int maxHealth = 100;
     public int currentHealth;
+    public int curLevel;
 
     [Tooltip("当前能够召唤出来的所有Cube类型，也就是玩家的卡组")]
     public List<GameObject> Deck = new List<GameObject>();

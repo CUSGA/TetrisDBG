@@ -30,6 +30,13 @@ public class SceneController : Singleton<SceneController>
         TransitionToBattleScene(StageManager.Instance.AllStage[n]);
     }
 
+    public void TransitionToRandomStage(int level)
+    {
+        //从StageManager所储存的所有关卡中随机抽一个进入（目前只有一个关卡所以只能进入这一关）
+        int n = Mathf.FloorToInt(Random.Range(0f, StageManager.Instance.AllStage.Length));
+        TransitionToBattleScene(StageManager.Instance.AllStage[n], level);
+    }
+
     /// <summary>
     /// 进入战斗场景，如果要指向性进入某个关卡就直接调用这个。
     /// </summary>
